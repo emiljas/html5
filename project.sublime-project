@@ -1,0 +1,19 @@
+{
+    "folders": [
+        {
+            "path": "C:\\Users\\Emil\\Desktop\\html5", 
+            "follow_symlinks": true
+        }, 
+        {
+            "path": ".", 
+            "follow_symlinks": true
+        }
+    ], 
+    "settings": {
+        "typescript": {
+            "roots": [
+                "script"
+            ]
+        }
+    }
+}

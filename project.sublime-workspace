@@ -1,0 +1,592 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"cal",
+				"calculateSecondValue"
+			],
+			[
+				"calc",
+				"calculateSecondValue"
+			],
+			[
+				"ca",
+				"calculateMinuteValue"
+			],
+			[
+				"get",
+				"[pub] ○ getMinutes (): number"
+			],
+			[
+				"getMi",
+				"[pub] ○ getMilliseconds (): number"
+			],
+			[
+				"getM",
+				"getMilliseconds"
+			],
+			[
+				"draw",
+				"drawHand"
+			],
+			[
+				"mi",
+				"minuteHandLength"
+			],
+			[
+				"tex",
+				"[pub] ● textAlign string"
+			],
+			[
+				"text",
+				"[pub] ● textBaseline string"
+			],
+			[
+				"nume",
+				"numeralWidth"
+			],
+			[
+				"arc",
+				"[pub] ○ arc (x: number, y: number, radius: number, startAngle: number, endAngle: number, anticlockwise?: boolean): void"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"o",
+				"onmessage"
+			],
+			[
+				"on",
+				"onreadystatechange"
+			],
+			[
+				"me",
+				"messageEvent"
+			],
+			[
+				"loadC",
+				"loadCallback"
+			],
+			[
+				"load",
+				"loadCallback"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "selectiveRequestAnimationFrame/index.html",
+			"settings":
+			{
+				"buffer_size": 341,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "selectiveRequestAnimationFrame/script.ts",
+			"settings":
+			{
+				"buffer_size": 2421,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "selectiveRequestAnimationFrame/build.bat",
+			"settings":
+			{
+				"buffer_size": 59,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/User/build-bat.sublime-build",
+	"command_palette":
+	{
+		"height": 380.0,
+		"selected_items":
+		[
+			[
+				"Pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Paka",
+				"Package Control: Install Package"
+			],
+			[
+				"Pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"package ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Page",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Discover Packages"
+			],
+			[
+				"Pa",
+				"Package Control: Install Package"
+			],
+			[
+				"pretty",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"for",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"Package",
+				"Package Control: Add Repository"
+			],
+			[
+				"set json",
+				"Set Syntax: JSON"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 181.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Emil/Desktop/html5",
+		"/C/Users/Emil/Desktop/html5/selectiveRequestAnimationFrame"
+	],
+	"file_history":
+	[
+		"/C/Users/Emil/TypeScript/bin/tsc.js",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/c/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/T3S/bin/lib.d.ts",
+		"/C/Users/Emil/Desktop/html5/selectiveRequestAnimationFrame/script.js",
+		"/C/Users/Emil/Desktop/html5/selectiveRequestAnimationFrame/build.bat",
+		"/C/Users/Emil/Desktop/loadImagesByWebWorker/startUpServer.js",
+		"/C/Users/Emil/Desktop/loadImagesByWebWorker/build.bat",
+		"/C/Users/Emil/Desktop/loadImagesByWebWorker/downloadImageWorker.ts",
+		"/C/Users/Emil/Desktop/loadImagesByWebWorker/downloadImageWorker.js",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/User/T3S.sublime-settings",
+		"/C/Users/Emil/Desktop/loadImagesByWebWorker/index.html",
+		"/C/Users/Emil/Desktop/loadImagesByWebWorker/project.sublime-project",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/User/build-bat.sublime-build",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/User/build-ps1.sublime-build",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/T3S/examples/sublimeproject/project.sublime-project",
+		"/C/Users/Emil/Desktop/loadImagesByWebWorker/script.js",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/T3S/T3S.sublime-settings",
+		"/C/Users/Emil/Desktop/loadImagesByWebWorker/a.js",
+		"/C/Users/Emil/Desktop/loadImagesByWebWorker/script.ts",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/User/Typescript.sublime-settings",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/T3S/Typescript.sublime-settings",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/T3S/Typescript.build.js",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/Better TypeScript/TypeScript.sublime-settings",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/Typescript.sublime-build",
+		"/C/Users/Emil/Desktop/kasuj/kasuj.js",
+		"/C/Users/Emil/AppData/Roaming/npm/node_modules/typescript-tools/tss.ts",
+		"/C/Users/Emil/AppData/Roaming/npm/node_modules/typescript-tools/bin/tss",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/C/Users/Emil/AppData/Roaming/npm/node_modules/typescript-tools/tests/test.ts",
+		"/C/Users/Emil/AppData/Roaming/npm/node_modules/typescript-tools/script.results",
+		"/C/Users/Emil/AppData/Local/Sublime Text 3/Cache/Better TypeScript/TypeScript.tmLanguage.cache",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/User/Typescript.sublime-build",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Emil/Desktop/kasuj/test.ts",
+		"/C/Users/Emil/Desktop/opengl/ex1/index.html",
+		"/C/Users/Emil/Desktop/TypeScript/src/services/services.ts",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Emil/Desktop/kasuj/script.ts",
+		"/C/Users/Emil/Desktop/TypeScript/Jakefile",
+		"/C/Program Files (x86)/Microsoft SDKs/TypeScript/1.0/tsc.js",
+		"/C/Users/Emil/Desktop/TypeScript/src/compiler/commandLineParser.ts",
+		"/C/Users/Emil/Desktop/TypeScript/src/compiler/core.ts",
+		"/C/Users/Emil/Desktop/TypeScript/tests/webTestServer.ts",
+		"/C/Users/Emil/Desktop/TypeScript/tests/cases/unittests/services/formatting/getSmartIndentAtLineNumber.ts",
+		"/C/Users/Emil/Desktop/TypeScript/src/compiler/scanner.ts",
+		"/C/Users/Emil/Desktop/TypeScript/tests/cases/compiler/aliasAssignments.ts",
+		"/C/Users/Emil/Desktop/TypeScript/tests/baselines/local/aliasUsageInArray.js",
+		"/C/Users/Emil/AppData/Local/Microsoft/VisualStudio/12.0/Extensions/0gy0j1bu.gj2/JSRunners/chutzpahRunner.js",
+		"/C/Users/Emil/Desktop/RWAJMAN/projects/SOLID/DocumentOutput.json",
+		"/C/Users/Emil/Desktop/RWAJMAN/projects/SOLID/DocumentInput.json",
+		"/C/Users/Emil/Desktop/RWAJMAN/projects/SOLID/DocumentInput.xml",
+		"/C/Users/Emil/Desktop/RWAJMAN/projects/SOLID/Document.json",
+		"/C/Users/Emil/Desktop/samsungPlus/AriesVE.ops",
+		"/C/Users/Emil/Downloads/scheduler/samples/CalendarApp/js/default.js",
+		"/C/Users/Emil/Downloads/dhtmlxScheduler_v37_win_130220/samples/CalendarApp/js/default.js",
+		"/C/Users/Emil/Desktop/RWAJMAN/projects/Calender/Calender.Tests/Calender.Tests.csproj",
+		"/C/Users/Emil/Desktop/RWAJMAN/projects/Calender/Calender/Calender.jsproj",
+		"/C/Users/Emil/Desktop/TypeScriptSamples/win8.1/encyclopedia/Encyclopedia/Encyclopedia.jsproj",
+		"/C/Users/Emil/Desktop/config",
+		"/C/Users/Emil/AppData/Local/Packages/ee6f1a35-4c72-49a1-b4cb-3b5f09af08a6_jvw2cr4a7cpjj/Settings/roaming.lock",
+		"/C/Users/Emil/AppData/Local/Packages/ee6f1a35-4c72-49a1-b4cb-3b5f09af08a6_jvw2cr4a7cpjj/Settings/settings.dat"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\\",
+			" - Copy",
+			"\\\"",
+			"dhtmlxScheduler - Copy"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"\\\\",
+			"",
+			"\"",
+			"dhtmlxScheduler"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "selectiveRequestAnimationFrame/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 341,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								207,
+								207
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": true,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_insert",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"native",
+									[
+										"sequence",
+										{
+											"commands":
+											[
+												[
+													"insert",
+													{
+														"characters": " "
+													}
+												],
+												[
+													"left_delete",
+													null
+												]
+											]
+										}
+									],
+									"mode_insert",
+									null
+								],
+								"sequence": "",
+								"xpos": 49
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "selectiveRequestAnimationFrame/script.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2421,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1404,
+								1404
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"extensions":
+							[
+								"ts"
+							],
+							"highlight_line": false,
+							"syntax": "Packages/T3S/theme/Typescript.tmLanguage",
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": false,
+								"_vintageous_gluing_sequence": false,
+								"_vintageous_non_interactive": false,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"native",
+									[
+										"sequence",
+										{
+											"commands":
+											[
+												[
+													"insert",
+													{
+														"characters": "cal"
+													}
+												],
+												[
+													"insert_completion",
+													{
+														"completion": "calculateSecondValue",
+														"snippet": "",
+														"trigger": "calculateSecondValue"
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "()"
+													}
+												]
+											]
+										}
+									],
+									"mode_insert",
+									null
+								],
+								"sequence": "",
+								"xpos": 38
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "selectiveRequestAnimationFrame/build.bat",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 59,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Batch File/Batch File.tmLanguage",
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": false,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"vi",
+									"dd",
+									"mode_internal_normal",
+									null
+								],
+								"sequence": "",
+								"xpos": 0
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 118.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.typescript_output":
+	{
+		"height": 118.0
+	},
+	"project": "project.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"_vintageous_reset_during_init": true,
+		"vintage":
+		{
+			"_cmdline_cd": "C:\\Users\\Emil\\Desktop\\html5\\selectiveRequestAnimationFrame"
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 235.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
