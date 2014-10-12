@@ -11,6 +11,7 @@ module Script {
 	var hourHandLength = 0.5;
 	var minuteHandLength = 0.8;
 	var secondHandLength = 0.8;
+	var timeout = 1000;
 
 	context.font = fontHeight + "px Arial";
 	context.textBaseline = "middle";
@@ -65,16 +66,10 @@ module Script {
 
 	function calculateSecondValue() {
 		var seconds = new Date().getSeconds();
-		return (seconds + calculateMillisecondValue()) / 60;
-	}
-
-	function calculateMillisecondValue() {
-		var milliseconds = new Date().getMilliseconds();
-		return milliseconds / 1000;
+		return seconds / 60;
 	}
 
 	function drawHand(timeValue: number, length: number) {
-		console.log(timeValue);
 		context.moveTo(width / 2, height / 2);
 		var angle = timeValue * 2 * Math.PI;
 		angle -= Math.PI / 2;
@@ -84,10 +79,50 @@ module Script {
 		context.stroke();
 	}
 
-	setInterval(function(){
+	function loop() {
 		context.clearRect(0, 0, width, height);
 		drawCircle();
 		drawNumerals();
 		drawHands();
-	}, 10)
+
+		timerMethod(loop, timeout);
+	}
+
+	declare var timerMethodType: string;
+	var lastCallTime: number;
+	interface TimerMethodCallback { (callback: () => void, timeout: number): void }
+
+	var timerMethod: TimerMethodCallback;
+
+	if(timerMethodType === "setTimeout") {
+		timerMethod = window.setTimeout;
+	}
+	else if(timerMethodType === "requestAnimationFrame") {
+		timerMethod = (callback, timeout)  => {
+			window.requestAnimationFrame(callback);
+		};
+	}
+	else if(timerMethodType === "requestAnimationFrameWithIf") {
+		timerMethod = (callback, timeout) => {
+			window.requestAnimationFrame(() => {
+				if(!lastCallTime) 
+					lastCallTime = new Date().getTime();
+				else if(new Date().getTime() - lastCallTime >= timeout) {
+					lastCallTime = new Date().getTime();
+					callback();
+					return;
+				}
+				timerMethod(callback, timeout);
+			});
+		};
+	}
+	else if(timerMethodType === "requestAnimationFrameWithSetTimeout") {
+		timerMethod = (callback, timeout) => {
+			window.setTimeout(() => {
+				window.requestAnimationFrame(callback);
+			}, timeout);
+		};
+	}
+
+	loop();
 }

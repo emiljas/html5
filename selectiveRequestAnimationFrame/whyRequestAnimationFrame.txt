@@ -1,0 +1,3 @@
+animation shouldn't work in background tabs or when window is minimized
+problem with callback functions longer taking than timer
+unnecessary draws

@@ -11,6 +11,7 @@ var Script;
     var hourHandLength = 0.5;
     var minuteHandLength = 0.8;
     var secondHandLength = 0.8;
+    var timeout = 1000;
     context.font = fontHeight + "px Arial";
     context.textBaseline = "middle";
     context.textAlign = "center";
@@ -55,14 +56,9 @@ var Script;
     }
     function calculateSecondValue() {
         var seconds = new Date().getSeconds();
-        return (seconds + calculateMillisecondValue()) / 60;
-    }
-    function calculateMillisecondValue() {
-        var milliseconds = new Date().getMilliseconds();
-        return milliseconds / 1000;
+        return seconds / 60;
     }
     function drawHand(timeValue, length) {
-        console.log(timeValue);
         context.moveTo(width / 2, height / 2);
         var angle = timeValue * 2 * Math.PI;
         angle -= Math.PI / 2;
@@ -71,10 +67,43 @@ var Script;
         context.lineTo(x, y);
         context.stroke();
     }
-    setInterval(function () {
+    function loop() {
         context.clearRect(0, 0, width, height);
         drawCircle();
         drawNumerals();
         drawHands();
-    }, 10);
+        timerMethod(loop, timeout);
+    }
+    var lastCallTime;
+    var timerMethod;
+    if (timerMethodType === "setTimeout") {
+        timerMethod = window.setTimeout;
+    }
+    else if (timerMethodType === "requestAnimationFrame") {
+        timerMethod = function (callback, timeout) {
+            window.requestAnimationFrame(callback);
+        };
+    }
+    else if (timerMethodType === "requestAnimationFrameWithIf") {
+        timerMethod = function (callback, timeout) {
+            window.requestAnimationFrame(function () {
+                if (!lastCallTime)
+                    lastCallTime = new Date().getTime();
+                else if (new Date().getTime() - lastCallTime >= timeout) {
+                    lastCallTime = new Date().getTime();
+                    callback();
+                    return;
+                }
+                timerMethod(callback, timeout);
+            });
+        };
+    }
+    else if (timerMethodType === "requestAnimationFrameWithSetTimeout") {
+        timerMethod = function (callback, timeout) {
+            window.setTimeout(function () {
+                window.requestAnimationFrame(callback);
+            }, timeout);
+        };
+    }
+    loop();
 })(Script || (Script = {}));
