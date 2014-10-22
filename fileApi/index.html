@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+
+    <style type="text/css">
+    body {
+        margin: 0;
+        height: 100%;
+        background-color: #F5F5F5;
+    }
+    </style>
+
+    <script type="text/javascript">
+        var isStorageSupported = false;
+        var isFileAPISupported = false;
+
+        function init()
+        {
+            if (!("localStorage" in window && window["localStorage"] != null)) 
+            {
+                window.alert("This browser doesn't support local storage");
+            }
+            else 
+            {
+                isStorageSupported = true;
+            }
+            
+            //File API
+            if(window.File && window.FileReader && window.FileList)
+            {
+                isFileAPISupported = true
+            }
+            else 
+            {
+                window.alert("This browser doesn't support File API");
+            }
+
+            useFileAPI();
+            useDragDrop();
+        }
+        
+        function useFileAPI()
+        {
+            document.getElementById("picker").addEventListener("change", onFileSelected,false);
+        
+            function onFileSelected(e) 
+            {
+                var file = e.target.files[0];
+                loadImage(file);
+            }
+        }
+
+        function useDragDrop()
+        {
+            document.addEventListener("dragover", onDragOver, false);
+            document.addEventListener("drop", onDrop, false);
+
+            function onDragOver(e)
+            {
+                e.preventDefault();
+            }
+            
+            function onDrop(e)
+            {
+                e.preventDefault();
+                var file = e.dataTransfer.files[0];
+                loadImage(file);
+            }
+        }
+        
+        function loadImage(file) {
+            if (!file.type.match("image.*")) 
+            {
+                alert("\"" + file.name + "\" is not an image file");
+                return;
+            }
+            
+            console.log("Dane obrazka:" 
+                        + " name: "+ file.name 
+                        + " type: " + file.type 
+                        + " size: " + file.size 
+                        + " timeStamp: " + file.lastModifiedDate);
+
+
+            var reader = new FileReader();
+            reader.onload = function (e) 
+            {
+                    var canvas = document.getElementById("image");
+                    var ctx=canvas.getContext("2d");
+                    
+                    var img = new Image();
+                    img.src = e.target.result;
+
+                    ctx.drawImage(img,0,0);
+            }
+
+            reader.readAsDataURL(file);
+        }
+
+        window.addEventListener("load", init, false);
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <canvas id="image" width="800" height="600" style="border:1px solid #000000;"></canvas><br />
+
+        <label for="picker" style="margin-left: 8px; margin-right: 8px">Select files</label>
+        <input type="file" id="picker" style="width: 320px"/>
+    </header>
+
+</body>
+</html>
