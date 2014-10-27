@@ -4,23 +4,6 @@
   <meta charset="UTF-8">
   <title></title>
   <script src="playground.js"></script>
-  <script id="shaderFs" type="x-shader/x-fragment">
-  precision mediump float;
-
-  void main(void) {
-    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
-  }
-  </script>
-  <script id="shaderVs" type="x-shader/x-vertex">
-  attribute vec3 aVertexPosition;
-
-  uniform mat4 uMVMatrix;
-  uniform mat4 uPMatrix;
-
-  void main(void) {
-    gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
-  }
-  </script>
   <style>
     .centerDiv {
       margin: 0 auto; 
