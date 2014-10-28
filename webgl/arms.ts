@@ -33,16 +33,16 @@ module Arms {
     gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);\n\
   }";
 
-  var vertexShaderSource2 = "\n\
-  attribute vec2 aPosition;\n\
-  void main(void) {\n\
-    gl_Position = vec4(aPosition, 0.0, 1.0);\n\
-  }";
+  // var vertexShaderSource2 = "\n\
+  // attribute vec2 aPosition;\n\
+  // void main(void) {\n\
+  //   gl_Position = vec4(aPosition, 0.0, 1.0);\n\
+  // }";
 
-  var fragmentShaderSource2 = "\n\
-  void main(void) {\n\
-    gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);\n\
-  }";
+  // var fragmentShaderSource2 = "\n\
+  // void main(void) {\n\
+  //   gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);\n\
+  // }";
 
   var arm1VertexBuffer = [
     0.25, 0.0,
@@ -127,15 +127,20 @@ module Arms {
       oldTime = time;
       gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
+      gl.bindBuffer(gl.ARRAY_BUFFER, arm1Vertex);
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, arm1Faces);
       gl.uniformMatrix4fv(arm1ProjectionMatrixLocation, false, projectionMatrix);
       gl.uniformMatrix4fv(arm1ViewMatrixLocation, false, viewMatrix);
       gl.uniformMatrix4fv(arm1MovementMatrixLocation, false, movementMatrix);
       gl.vertexAttribPointer(arm1PositionLocation, 2, gl.FLOAT, false, 4*2, 0);
-      gl.bindBuffer(gl.ARRAY_BUFFER, arm1Vertex);
       gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_SHORT, 0);
 
-      gl.vertexAttribPointer(arm2PositionLocation, 2, gl.FLOAT, false, 4*2, 0);
       gl.bindBuffer(gl.ARRAY_BUFFER, arm2Vertex);
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, arm2Faces);
+      gl.uniformMatrix4fv(arm1ProjectionMatrixLocation, false, projectionMatrix);
+      gl.uniformMatrix4fv(arm1ViewMatrixLocation, false, viewMatrix);
+      gl.uniformMatrix4fv(arm1MovementMatrixLocation, false, movementMatrix);
+      gl.vertexAttribPointer(arm2PositionLocation, 2, gl.FLOAT, false, 4*2, 0);
       gl.drawElements(gl.TRIANGLES, 3, gl.UNSIGNED_SHORT, 0);
 
       gl.flush();
@@ -146,7 +151,7 @@ module Arms {
 
   function initShaders() {
     initArm1Shader();
-    initArm2Shader();
+    // initArm2Shader();
   }
 
   function initArm1Shader() {
@@ -160,11 +165,11 @@ module Arms {
     gl.enableVertexAttribArray(arm1PositionLocation);
   }
 
-  function initArm2Shader() {
-    var program = utils.useProgram(vertexShaderSource2, fragmentShaderSource2);
+  // function initArm2Shader() {
+  //   var program = utils.useProgram(vertexShaderSource2, fragmentShaderSource2);
 
-    arm2PositionLocation = gl.getAttribLocation(program, "aPosition");
+  //   arm2PositionLocation = gl.getAttribLocation(program, "aPosition");
 
-    gl.enableVertexAttribArray(arm2PositionLocation);
-  }
+  //   gl.enableVertexAttribArray(arm2PositionLocation);
+  // }
 }
