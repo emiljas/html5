@@ -4,6 +4,66 @@
 		"selected_items":
 		[
 			[
+				"viewM",
+				"viewMatrix2"
+			],
+			[
+				"tran",
+				"translateY"
+			],
+			[
+				"move",
+				"movementMatrix2"
+			],
+			[
+				"tra",
+				"translate"
+			],
+			[
+				"tr",
+				"translateY"
+			],
+			[
+				"isLeftButtonD",
+				"isLeftButtonDown"
+			],
+			[
+				"isL",
+				"isLeftButton"
+			],
+			[
+				"isLe",
+				"isLeftButtonDown"
+			],
+			[
+				"isRightButtonD",
+				"isRightButtonDown"
+			],
+			[
+				"isCli",
+				"isClickedAndMoved"
+			],
+			[
+				"isCl",
+				"isClickedAndMoved"
+			],
+			[
+				"pre",
+				"[pub] ○ preventDefault (): void"
+			],
+			[
+				"mo",
+				"movementMatrix2"
+			],
+			[
+				"viewMa",
+				"viewMatrix2"
+			],
+			[
+				"arm2",
+				"arm2Vertex"
+			],
+			[
 				"arm2F",
 				"arm2Faces"
 			],
@@ -56,10 +116,6 @@
 				"[pub] ● STATIC_DRAW number"
 			],
 			[
-				"tr",
-				"triangleFaces"
-			],
-			[
 				"UNSI",
 				"[pub] ● UNSIGNED_SHORT number"
 			],
@@ -100,10 +156,6 @@
 				"[pub] ○ uniformMatrix4fv (location: WebGLUniformLocation, transpose: boolean, value: Float32Array): void"
 			],
 			[
-				"move",
-				"movementMatrixLocation"
-			],
-			[
 				"rot",
 				" ○ rotateY (m: any, angle: any): void"
 			],
@@ -138,10 +190,6 @@
 			[
 				"HTMLC",
 				" ◊ HTMLCanvasElement HTMLCanvasElement"
-			],
-			[
-				"tran",
-				"trangleFaces"
 			],
 			[
 				"FLOAT",
@@ -275,7 +323,7 @@
 			"file": "webgl/arms.html",
 			"settings":
 			{
-				"buffer_size": 281,
+				"buffer_size": 406,
 				"line_ending": "Windows"
 			}
 		},
@@ -283,7 +331,7 @@
 			"file": "webgl/arms.ts",
 			"settings":
 			{
-				"buffer_size": 5040,
+				"buffer_size": 6619,
 				"line_ending": "Windows"
 			}
 		},
@@ -398,6 +446,8 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Emil/Desktop/webglsamples-f6a5a16e0413/lots-o-objects/lots-o-objects-draw-elements.html",
+		"/C/Users/Emil/Desktop/webglsamples-f6a5a16e0413/lots-o-objects/index.html",
 		"/C/Users/Emil/Desktop/html5/webgl/shared/MathUtils.js",
 		"/C/Users/Emil/Desktop/html5/webgl/triangle.ts",
 		"/C/Users/Emil/Desktop/html5/webgl/playground.ts",
@@ -530,7 +580,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -539,19 +589,20 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 281,
+						"buffer_size": 406,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								83,
-								83
+								294,
+								294
 							]
 						],
 						"settings":
 						{
+							"highlight_line": false,
 							"open_with_edit": true,
 							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 2,
@@ -571,23 +622,19 @@
 								"repeat_data":
 								[
 									"vi",
-									"d",
+									"x",
 									"mode_normal",
-									[
-										6,
-										0,
-										"mode_visual_line"
-									]
+									null
 								],
 								"sequence": "",
-								"xpos": 0
+								"xpos": 9
 							}
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -596,24 +643,31 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5040,
+						"buffer_size": 6619,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3948,
-								3948
+								1341,
+								1341
 							]
 						],
 						"settings":
 						{
+							"auto_complete": true,
+							"extensions":
+							[
+								"ts"
+							],
 							"open_with_edit": true,
 							"syntax": "Packages/T3S/theme/Typescript.tmLanguage",
 							"vintage":
 							{
 								"_vintageous_glue_until_normal_mode": false,
+								"_vintageous_non_interactive": false,
+								"_vintageous_processing_notation": false,
 								"action": null,
 								"action_count": "",
 								"mode": "mode_normal",
@@ -625,40 +679,20 @@
 								"register": "\"",
 								"repeat_data":
 								[
-									"native",
-									[
-										"sequence",
-										{
-											"commands":
-											[
-												[
-													"_vi_a",
-													{
-														"count": 1,
-														"mode": "mode_internal_normal"
-													}
-												],
-												[
-													"insert",
-													{
-														"characters": "2"
-													}
-												]
-											]
-										}
-									],
-									"mode_insert",
+									"vi",
+									"x",
+									"mode_normal",
 									null
 								],
 								"sequence": "",
-								"xpos": 60
+								"xpos": 18
 							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 2320.0,
+						"translation.y": 600.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -674,8 +708,8 @@
 						"selection":
 						[
 							[
-								1415,
-								1415
+								773,
+								773
 							]
 						],
 						"settings":
@@ -765,14 +799,14 @@
 									null
 								],
 								"sequence": "",
-								"xpos": 14
+								"xpos": 17
 							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 420.0,
+						"translation.y": 231.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -815,7 +849,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -865,7 +899,7 @@
 						"translation.y": 5021.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -954,7 +988,7 @@
 	"selected_group": 0,
 	"settings":
 	{
-		"_vintageous_last_buffer_search": "mat4",
+		"_vintageous_last_buffer_search": "viewMatrix",
 		"_vintageous_last_char_search_command": "vi_f",
 		"_vintageous_last_character_search": ",",
 		"_vintageous_reset_during_init": true,
@@ -966,7 +1000,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 235.0,
 	"status_bar_visible": true,
 	"template_settings":
