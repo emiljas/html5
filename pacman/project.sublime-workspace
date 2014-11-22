@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"text",
+				"[pub] ● textBaseline string"
+			],
+			[
+				"canv",
+				"  canvasWidth number"
+			],
+			[
+				"a",
+				"[priv] ● absoluteY number"
+			],
+			[
+				"ab",
+				"absoluteY"
+			],
+			[
+				"MO",
+				" ● PIXELS_MOVE_FOR_MILLISECOND number"
+			],
+			[
 				"ism",
 				"[priv] ● isMovingForward boolean"
 			],
@@ -22,10 +42,6 @@
 			[
 				"EVE",
 				"EYE_RELATIVE_X"
-			],
-			[
-				"canv",
-				"canvasHeight"
 			],
 			[
 				"can",
@@ -58,10 +74,6 @@
 			[
 				"C",
 				"  config AWS.ClientConfig"
-			],
-			[
-				"a",
-				"address"
 			],
 			[
 				"Se",
@@ -179,7 +191,15 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 287,
+				"buffer_size": 334,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "script.js",
+			"settings":
+			{
+				"buffer_size": 6570,
 				"line_ending": "Unix"
 			}
 		},
@@ -187,7 +207,7 @@
 			"file": "script.ts",
 			"settings":
 			{
-				"buffer_size": 5072,
+				"buffer_size": 6113,
 				"line_ending": "Unix"
 			}
 		}
@@ -252,7 +272,7 @@
 	},
 	"expanded_folders":
 	[
-		"/home/emil/Pulpit/pacman"
+		"/home/emil/Pulpit/html5/pacman"
 	],
 	"file_history":
 	[
@@ -442,15 +462,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 287,
+						"buffer_size": 334,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								215,
-								215
+								333,
+								333
 							]
 						],
 						"settings":
@@ -471,12 +491,12 @@
 								"repeat_data":
 								[
 									"vi",
-									"dd",
-									"mode_internal_normal",
+									"x",
+									"mode_normal",
 									null
 								],
 								"sequence": "",
-								"xpos": 0
+								"xpos": 6
 							}
 						},
 						"translation.x": 0.0,
@@ -488,19 +508,62 @@
 				},
 				{
 					"buffer": 1,
-					"file": "script.ts",
+					"file": "script.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5072,
+						"buffer_size": 6570,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								936,
-								936
+								498,
+								498
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"vintage":
+							{
+								"action": null,
+								"action_count": "",
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"must_capture_register_name": false,
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 0
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "script.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6113,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5295,
+								5295
 							]
 						],
 						"settings":
@@ -512,14 +575,16 @@
 							],
 							"highlight_line": false,
 							"syntax": "Packages/T3S/theme/Typescript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
 							"vintage":
 							{
-								"_vintageous_glue_until_normal_mode": true,
+								"_vintageous_glue_until_normal_mode": false,
 								"_vintageous_non_interactive": false,
 								"_vintageous_processing_notation": false,
 								"action": null,
 								"action_count": "",
-								"mode": "mode_insert",
+								"mode": "mode_normal",
 								"motion": null,
 								"motion_count": "",
 								"must_capture_register_name": false,
@@ -529,19 +594,19 @@
 								"repeat_data":
 								[
 									"vi",
-									"r-",
+									"r0",
 									"mode_normal",
 									null
 								],
 								"sequence": "",
-								"xpos": 13
+								"xpos": 21
 							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3315.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -619,7 +684,8 @@
 	"selected_group": 0,
 	"settings":
 	{
-		"_vintageous_last_char_search_command": "vi_t",
+		"_vintageous_last_buffer_search": "this.x",
+		"_vintageous_last_char_search_command": "vi_f",
 		"_vintageous_last_character_search": "r",
 		"_vintageous_reset_during_init": true,
 		"vintage":
@@ -630,7 +696,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 381.0,
 	"status_bar_visible": true,
 	"template_settings":

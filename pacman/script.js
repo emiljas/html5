@@ -2,9 +2,7 @@ var FRAME_BORDER = 25;
 var Pacman = (function () {
     function Pacman() {
         this.absoluteX = 100;
-        this.absoluteY = 100;
-        this.x = 100;
-        this.y = 100;
+        this.absoluteY = 300;
         this.isMouthOpen = true;
         this.isMovingForward = true;
     }
@@ -15,24 +13,32 @@ var Pacman = (function () {
             this.isMouthOpen = !this.isMouthOpen;
             this.lastChangeMouthStateTime = time;
         }
-        if (this.x + Pacman.RADIUS > canvasWidth - FRAME_BORDER)
+        if (this.absoluteX + Pacman.RADIUS > canvasWidth - FRAME_BORDER)
             this.isMovingForward = false;
-        if (this.x - Pacman.RADIUS < FRAME_BORDER)
+        if (this.absoluteX - Pacman.RADIUS < FRAME_BORDER)
             this.isMovingForward = true;
         context.save();
         var move = Pacman.PIXELS_MOVE_FOR_MILLISECOND * timeDiff;
         if (this.isMovingForward)
-            this.x += move;
+            this.absoluteX += move;
         else {
-            this.x -= move;
+            this.absoluteX -= move;
             context.translate(canvasWidth, 0);
             context.scale(-1, 1);
         }
-        if (this.isMouthOpen)
+        if (this.isMovingForward) {
+            this.x = this.absoluteX;
+            this.y = this.absoluteY;
+        }
+        else {
+            this.x = canvasWidth - this.absoluteX;
+            this.y = this.absoluteY;
+        }
+        if (this.isMouthOpen) {
             this.drawWithOpenMouth();
-        else
+        }
+        else {
             this.drawWithClosedMouth();
-        if (!this.isMovingForward) {
         }
         context.restore();
     };
@@ -119,7 +125,7 @@ var Pacman = (function () {
     Pacman.EYE_RELATIVE_Y = -Pacman.RADIUS / 2.5;
     Pacman.BORDER_WIDTH = 3;
     Pacman.CHANGE_MOUTH_STATE_INTERVAL = 1000;
-    Pacman.PIXELS_MOVE_FOR_MILLISECOND = 400 / 1000;
+    Pacman.PIXELS_MOVE_FOR_MILLISECOND = 75 / 1000;
     return Pacman;
 })();
 var canvas;
@@ -173,7 +179,10 @@ function drawFPS(timeDiff) {
         fpsRefreshTimesCounter = 0;
         fpsTime = 0;
     }
-    context.fillStyle = "#000000";
-    context.fillText(fps.toString(), 50, 50);
+    context.fillStyle = "#ffffff";
+    context.font = "20pt Calibri";
+    context.textAlign = "center";
+    context.textBaseline = "middle";
+    context.fillText("FPS: " + fps.toString(), canvasWidth / 2, FRAME_BORDER / 2);
     fpsRefreshTimesCounter++;
 }
