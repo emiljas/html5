@@ -1,6 +1,8 @@
 var FRAME_BORDER = 25;
 var Pacman = (function () {
     function Pacman() {
+        this.absoluteX = 100;
+        this.absoluteY = 100;
         this.x = 100;
         this.y = 100;
         this.isMouthOpen = true;
@@ -17,14 +19,22 @@ var Pacman = (function () {
             this.isMovingForward = false;
         if (this.x - Pacman.RADIUS < FRAME_BORDER)
             this.isMovingForward = true;
+        context.save();
+        var move = Pacman.PIXELS_MOVE_FOR_MILLISECOND * timeDiff;
         if (this.isMovingForward)
-            this.x += (75 / 1000) * timeDiff;
-        else
-            this.x -= (75 / 1000) * timeDiff;
+            this.x += move;
+        else {
+            this.x -= move;
+            context.translate(canvasWidth, 0);
+            context.scale(-1, 1);
+        }
         if (this.isMouthOpen)
             this.drawWithOpenMouth();
         else
             this.drawWithClosedMouth();
+        if (!this.isMovingForward) {
+        }
+        context.restore();
     };
     Pacman.prototype.drawWithOpenMouth = function () {
         this.drawBorderWithOpenMouth();
@@ -39,23 +49,22 @@ var Pacman = (function () {
         this.drawEye();
     };
     Pacman.prototype.drawOpenMouth = function () {
-        context.lineWidth = Pacman.BORDER_WIDTH;
+        context.save();
         context.translate(this.x, this.y);
+        context.lineWidth = Pacman.BORDER_WIDTH;
         context.strokeStyle = "#000000";
         context.rotate(0.2 * Math.PI);
         context.beginPath();
         context.moveTo(0, 0);
         context.lineTo(Pacman.RADIUS, 0);
         context.stroke();
-        context.setTransform(1, 0, 0, 1, 0, 0);
-        context.translate(this.x, this.y);
         context.strokeStyle = "#000000";
-        context.rotate(-0.2 * Math.PI);
+        context.rotate(-0.4 * Math.PI);
         context.beginPath();
         context.moveTo(0, 0);
         context.lineTo(Pacman.RADIUS, 0);
         context.stroke();
-        context.setTransform(1, 0, 0, 1, 0, 0);
+        context.restore();
     };
     Pacman.prototype.drawBorderWithOpenMouth = function () {
         context.fillStyle = "#000000";
@@ -110,6 +119,7 @@ var Pacman = (function () {
     Pacman.EYE_RELATIVE_Y = -Pacman.RADIUS / 2.5;
     Pacman.BORDER_WIDTH = 3;
     Pacman.CHANGE_MOUTH_STATE_INTERVAL = 1000;
+    Pacman.PIXELS_MOVE_FOR_MILLISECOND = 400 / 1000;
     return Pacman;
 })();
 var canvas;
@@ -153,16 +163,15 @@ function drawFrame() {
     context.stroke();
 }
 var fps;
-var fpsTemp = 0;
+var fpsTime = 0;
 var FPS_REFRESH_TIMES = 60;
 var fpsRefreshTimesCounter = 0;
 function drawFPS(timeDiff) {
-    fpsTemp += timeDiff;
+    fpsTime += timeDiff;
     if (!fps || fpsRefreshTimesCounter == FPS_REFRESH_TIMES) {
-        alert(fpsRefreshTimesCounter);
-        fps = (1000 / fpsTemp) * fpsRefreshTimesCounter;
+        fps = Math.floor((1000 / fpsTime) * fpsRefreshTimesCounter);
         fpsRefreshTimesCounter = 0;
-        fpsTemp = 0;
+        fpsTime = 0;
     }
     context.fillStyle = "#000000";
     context.fillText(fps.toString(), 50, 50);
