@@ -135,8 +135,10 @@ var lastDrawTime;
 function draw(time) {
     if (!lastDrawTime)
         lastDrawTime = time;
+    var timeDiff = time - lastDrawTime;
     drawFrame();
-    pacman.draw(time, time - lastDrawTime);
+    drawFPS(timeDiff);
+    pacman.draw(time, timeDiff);
     lastDrawTime = time;
 }
 function drawFrame() {
@@ -149,4 +151,20 @@ function drawFrame() {
     context.lineTo(800, 0);
     context.lineTo(0, 0);
     context.stroke();
+}
+var fps;
+var fpsTemp = 0;
+var FPS_REFRESH_TIMES = 60;
+var fpsRefreshTimesCounter = 0;
+function drawFPS(timeDiff) {
+    fpsTemp += timeDiff;
+    if (!fps || fpsRefreshTimesCounter == FPS_REFRESH_TIMES) {
+        alert(fpsRefreshTimesCounter);
+        fps = (1000 / fpsTemp) * fpsRefreshTimesCounter;
+        fpsRefreshTimesCounter = 0;
+        fpsTemp = 0;
+    }
+    context.fillStyle = "#000000";
+    context.fillText(fps.toString(), 50, 50);
+    fpsRefreshTimesCounter++;
 }
