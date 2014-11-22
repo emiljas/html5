@@ -1,0 +1,19 @@
+{
+    "settings": {
+        "typescript": {
+            "roots": [
+                "script.ts"
+            ]
+        }
+    }, 
+    "folders": [
+        {
+            "follow_symlinks": true, 
+            "path": "/home/emil/Pulpit/pacman"
+        }, 
+        {
+            "follow_symlinks": true, 
+            "path": "."
+        }
+    ]
+}

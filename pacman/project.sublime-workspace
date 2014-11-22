@@ -1,0 +1,639 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ism",
+				"[priv] ● isMovingForward boolean"
+			],
+			[
+				"isM",
+				"[priv] ● isMovingForward boolean"
+			],
+			[
+				"RAd",
+				" ● RADIUS number"
+			],
+			[
+				"EYE_RELA",
+				"EYE_RELATIVE_Y"
+			],
+			[
+				"EVE",
+				"EYE_RELATIVE_X"
+			],
+			[
+				"canv",
+				"canvasHeight"
+			],
+			[
+				"can",
+				"canvasWidth"
+			],
+			[
+				"draw",
+				"[priv] ○ drawClosedMouth (): void"
+			],
+			[
+				"dr",
+				"[priv] ○ drawWithClosedMouth (): void"
+			],
+			[
+				"fillR",
+				"[pub] ○ fillRect (x: number, y: number, w: number, h: number): void"
+			],
+			[
+				"dra",
+				"[priv] ○ drawWithOpenMouth (): void"
+			],
+			[
+				"d",
+				"[priv] ○ drawOpen (): void"
+			],
+			[
+				"arc",
+				"[pub] ○ arc (x: number, y: number, radius: number, startAngle: number, endAngle: number, anticlockwise?: boolean): void"
+			],
+			[
+				"C",
+				"  config AWS.ClientConfig"
+			],
+			[
+				"a",
+				"address"
+			],
+			[
+				"Se",
+				" ◊ ServerRequest \"http\".ServerRequest"
+			],
+			[
+				"Request",
+				" ◊ RequestHandler express.RequestHandler"
+			],
+			[
+				"User",
+				"UserRepository"
+			],
+			[
+				"prot",
+				"prototype"
+			],
+			[
+				"access",
+				"accessKeyId"
+			],
+			[
+				"Fake",
+				"EmptyFakeInputStreamException"
+			],
+			[
+				"in",
+				"input"
+			],
+			[
+				"In",
+				"InputStream"
+			],
+			[
+				"symb",
+				"symbol"
+			],
+			[
+				"SYmbol",
+				"SymbolNotFoundException"
+			],
+			[
+				"Cal",
+				"CalculatorTests"
+			],
+			[
+				"obj",
+				"objects"
+			],
+			[
+				"obje",
+				"objectsSUT"
+			],
+			[
+				"OBJECT",
+				"OBJECTSUT"
+			],
+			[
+				"get",
+				"get_relative_cpp_path"
+			],
+			[
+				"OBJ",
+				"OBJECTSUT"
+			],
+			[
+				"Option",
+				"OptionNames"
+			],
+			[
+				"get_",
+				"get_user_or_default_option_value"
+			],
+			[
+				"rus",
+				"result"
+			],
+			[
+				"de",
+				"defaultIncludeRules"
+			],
+			[
+				"command",
+				"commandOutput"
+			],
+			[
+				"def",
+				"defaulfIgnoredObjectFiles"
+			],
+			[
+				"use",
+				"userOptionsJson"
+			],
+			[
+				"IFS",
+				"IFSELECTOR"
+			],
+			[
+				"print",
+				"printAwk"
+			],
+			[
+				"object",
+				"objectsOfSUT"
+			],
+			[
+				"AW",
+				"AWS_SECRET_KEY"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 287,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "script.ts",
+			"settings":
+			{
+				"buffer_size": 5072,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"cla",
+				"Clang Format: Select Style"
+			],
+			[
+				"for",
+				"Clang Format: Format Selection"
+			],
+			[
+				"form",
+				"Clang Format: Format Selection"
+			],
+			[
+				"format ",
+				"Clang Format: Format Selection"
+			],
+			[
+				"clan",
+				"Clang Format: Format Selection"
+			],
+			[
+				"Install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: Remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"Pack",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/emil/Pulpit/pacman"
+	],
+	"file_history":
+	[
+		"/home/emil/Pulpit/pacman/script.js",
+		"/home/emil/Desktop/frozen-octo-typescript/src/web/app.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/src/web/public/javascripts/filter/filter-main.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/src/web/public/javascripts/utils/getQueryStringValueByName.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/src/web/public/javascripts/filter/ProgressIndicator.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/Gulpfile.js",
+		"/home/emil/Desktop/frozen-octo-typescript/release/web/public/javascripts/filter/filter-main.js",
+		"/home/emil/Desktop/frozen-octo-typescript/src/web/public/javascripts/filter/filter.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/.gitignore",
+		"/home/emil/Desktop/frozen-octo-typescript/src/components/PicasaClient.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/src/web/routes/album.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/src/models/picasa/Thumbnail.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/src/web/views/index.jade",
+		"/home/emil/Desktop/frozen-octo-typescript/release/web/views/album.jade",
+		"/home/emil/Desktop/frozen-octo-typescript/src/web/views/album.jade",
+		"/home/emil/Desktop/frozen-octo-typescript/src/components/SQSController.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/release/components/SQSController.js",
+		"/home/emil/Desktop/frozen-octo-typescript/src/services/PictureService.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/typings/aws-sdk/aws-sdk.d.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/src/repositories/UserRepository.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/src/components/S3Client.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/src/utils/PathUtils.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/src/components/SimpleDbRepository.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/typings/bluebird/bluebird.d.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/src/processingDeamon/processingDeamon.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/typings/node/node.d.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/node_modules/browserify/node_modules/crypto-browserify/node_modules/.bin/sha.js",
+		"/home/emil/Desktop/frozen-octo-typescript/typings/tsd.d.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/README.md",
+		"/home/emil/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/emil/Desktop/frozen-octo-typescript/src/models/picasa/Picture.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/src/models/picasa/Album.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/typings/xml2js/xml2js.d.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/typings/express/express.d.ts",
+		"/home/emil/.config/sublime-text-3/Packages/T3S/bin/lib.d.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/src/web/PassportAuth.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/src/config/config.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/src/web/routes/index.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/src/web/routes/filter.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/src/web/routes/process.ts",
+		"/home/emil/Desktop/frozen-octo-typescript/src/config/config.ts-template",
+		"/home/emil/Desktop/frozen-octo-typescript/project.sublime-project",
+		"/home/emil/.config/sublime-text-3/Packages/T3S/examples/sublimeproject/project.sublime-project",
+		"/home/emil/Desktop/frozen-octo-typescript/web/app.ts",
+		"/home/emil/Desktop/frozen-octo/repositories/UserRepository.js",
+		"/home/emil/Desktop/frozen-octo/config/config.js-template",
+		"/home/emil/Desktop/frozen-octo/config/config.js",
+		"/home/emil/Desktop/abcGulp/abc.ts",
+		"/home/emil/Desktop/abcGulp/.sublimets",
+		"/home/emil/Desktop/gulpTest/app.ts",
+		"/home/emil/Desktop/gulpTest/project.sublime-project",
+		"/home/emil/Desktop/promiseTest/app.js",
+		"/home/emil/Desktop/frozen-octo/components/SimpleDbRepository.js",
+		"/home/emil/Desktop/frozen-octo/web/PassportAuth.js",
+		"/home/emil/Desktop/frozen-octo/test/components/MySqlRepositoryTests.js",
+		"/home/emil/Desktop/frozen-octo/components/SimpleDbRepository",
+		"/home/emil/Desktop/frozen-octo/components/MySqlRepository.js",
+		"/home/emil/Desktop/frozen-octo/components/SQSController.js",
+		"/home/emil/.config/sublime-text-3/Packages/User/clang_format.sublime-settings",
+		"/home/emil/.config/sublime-text-3/Packages/Clang Format/clang_format.sublime-settings",
+		"/home/emil/Desktop/frozen-octo/web/oauth-config.js-template",
+		"/home/emil/Desktop/frozen-octo/web/app-config.js-template",
+		"/home/emil/Desktop/frozen-octo/web/app.js",
+		"/home/emil/Desktop/frozen-octo/components/S3Client.js",
+		"/home/emil/Desktop/frozen-octo/components/aws-s3-config.js-template",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/SymbolTable.h",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/ISymbolTable.h",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/tests/makefile",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/stream/InputStream.h",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/tests/SymbolTableTests.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/tests/LexerTests.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/tests/EntryTests.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/tests/stream/FakeInputStreamTests.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/Parser.h",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/tests/runAllTests.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/tests/valgrindSuppressingErrors.supp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/Parser.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompiler/parser.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompiler/lexer.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/Lexer.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/Lexer.h",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/tests/ParserTests.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/tests/stream/FakeInputStream.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/tests/stream/FakeInputStream.h",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/tests/stream/EmptyFakeInputStreamException.h",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/SymbolNotFoundException.h",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/Entry.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/SymbolTable.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/Entry.h",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/makefile",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/stream/OutputStream.h",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/stream/InputStream.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/stream/OutputStream.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/stream/CinStream.h",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/stream/CoutStream.h",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/OutputStream.h",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/OutputStream.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/InputStream.h",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/InputStream.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/CinStream.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/CinStream.h",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/CoutStream.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/CoutStream.h",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/SourceStream.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompiler/main.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompiler/emitter.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompiler/global.h",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/SourceStream.h",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/main.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompiler/symbol.cpp",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy/src/Token.h",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompiler/ConsoleWriter.h",
+		"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompiler/ConsoleWriter.cpp",
+		"/home/emil/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/emil/Desktop/CompilerConstruction/compilerExample/lexer.cpp",
+		"/home/emil/Desktop/CompilerConstruction/compilerExample/parser.cpp",
+		"/home/emil/Desktop/CompilerConstruction/compilerExample/symbol.cpp",
+		"/home/emil/Desktop/CompilerConstruction/compilerExample/init.cpp",
+		"/home/emil/Desktop/CompilerConstruction/compilerExample/global.h",
+		"/home/emil/Desktop/CompilerConstruction/compilerExample/main.cpp",
+		"/home/emil/Desktop/CompilerConstruction/compilerExample/emitter.cpp",
+		"/home/emil/Desktop/CompilerConstruction/compilerExample/makefile",
+		"/home/emil/Desktop/CompilerConstruction/compiler/tests/CalculatorTests.cpp",
+		"/home/emil/Desktop/CompilerConstruction/compiler/src/Calculator.cpp",
+		"/home/emil/Desktop/CompilerConstruction/compiler/tests/FooTests.cpp",
+		"/home/emil/Desktop/CompilerConstruction/compiler/src/makefile",
+		"/home/emil/Desktop/CompilerConstruction/compiler/tests/makefile",
+		"/home/emil/Desktop/CompilerConstruction/playground/src/Foo.h"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompilerMy",
+			"/home/emil/Desktop/CompilerConstruction/infixToPostfixCompiler"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"http",
+			"std",
+			"MockInputStream",
+			"lexptr",
+			"symtable",
+			"lookup",
+			"lexbuf",
+			"lexemes",
+			"lexems",
+			"lexemes",
+			"CC",
+			"sh"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"CXX"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 287,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								215,
+								215
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": false,
+								"action": null,
+								"action_count": "",
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"must_capture_register_name": false,
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"vi",
+									"dd",
+									"mode_internal_normal",
+									null
+								],
+								"sequence": "",
+								"xpos": 0
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "script.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5072,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								936,
+								936
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"extensions":
+							[
+								"ts"
+							],
+							"highlight_line": false,
+							"syntax": "Packages/T3S/theme/Typescript.tmLanguage",
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": true,
+								"_vintageous_non_interactive": false,
+								"_vintageous_processing_notation": false,
+								"action": null,
+								"action_count": "",
+								"mode": "mode_insert",
+								"motion": null,
+								"motion_count": "",
+								"must_capture_register_name": false,
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"vi",
+									"r-",
+									"mode_normal",
+									null
+								],
+								"sequence": "",
+								"xpos": 13
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.typescript_output":
+	{
+		"height": 112.0
+	},
+	"project": "project.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"_vintageous_last_char_search_command": "vi_t",
+		"_vintageous_last_character_search": "r",
+		"_vintageous_reset_during_init": true,
+		"vintage":
+		{
+			"_cmdline_cd": "/home/emil/Pulpit/pacman"
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 381.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
