@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"can",
+				"canvasWidth"
+			],
+			[
+				"clie",
+				"[pub] ● clientWidth number"
+			],
+			[
+				"docum",
+				"[pub] ● documentElement HTMLElement"
+			],
+			[
+				"pacm",
+				"pacmans"
+			],
+			[
+				"eyeR",
+				"eyeRadius"
+			],
+			[
+				"eye",
+				"eyeRelativeY"
+			],
+			[
 				"text",
 				"[pub] ● textBaseline string"
 			],
@@ -42,10 +66,6 @@
 			[
 				"EVE",
 				"EYE_RELATIVE_X"
-			],
-			[
-				"can",
-				"canvasWidth"
 			],
 			[
 				"draw",
@@ -188,10 +208,10 @@
 	"buffers":
 	[
 		{
-			"file": "index.html",
+			"file": "script.ts",
 			"settings":
 			{
-				"buffer_size": 334,
+				"buffer_size": 6629,
 				"line_ending": "Unix"
 			}
 		},
@@ -199,15 +219,23 @@
 			"file": "script.js",
 			"settings":
 			{
-				"buffer_size": 6570,
+				"buffer_size": 6956,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "script.ts",
+			"file": "/home/emil/Pulpit/cordova/frozenOcto/config.xml",
 			"settings":
 			{
-				"buffer_size": 6113,
+				"buffer_size": 502,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 309,
 				"line_ending": "Unix"
 			}
 		}
@@ -272,10 +300,13 @@
 	},
 	"expanded_folders":
 	[
+		"/home/emil/Pulpit/pacman",
 		"/home/emil/Pulpit/html5/pacman"
 	],
 	"file_history":
 	[
+		"/home/emil/Pulpit/html5/pacman/script.js",
+		"/home/emil/Pulpit/html5/pacman/index.html",
 		"/home/emil/Pulpit/pacman/script.js",
 		"/home/emil/Desktop/frozen-octo-typescript/src/web/app.ts",
 		"/home/emil/Desktop/frozen-octo-typescript/src/web/public/javascripts/filter/filter-main.ts",
@@ -401,9 +432,7 @@
 		"/home/emil/Desktop/CompilerConstruction/compiler/tests/CalculatorTests.cpp",
 		"/home/emil/Desktop/CompilerConstruction/compiler/src/Calculator.cpp",
 		"/home/emil/Desktop/CompilerConstruction/compiler/tests/FooTests.cpp",
-		"/home/emil/Desktop/CompilerConstruction/compiler/src/makefile",
-		"/home/emil/Desktop/CompilerConstruction/compiler/tests/makefile",
-		"/home/emil/Desktop/CompilerConstruction/playground/src/Foo.h"
+		"/home/emil/Desktop/CompilerConstruction/compiler/src/makefile"
 	],
 	"find":
 	{
@@ -453,117 +482,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 334,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								333,
-								333
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"vintage":
-							{
-								"_vintageous_glue_until_normal_mode": false,
-								"action": null,
-								"action_count": "",
-								"mode": "mode_normal",
-								"motion": null,
-								"motion_count": "",
-								"must_capture_register_name": false,
-								"normal_insert_count": "1",
-								"partial_sequence": "",
-								"register": "\"",
-								"repeat_data":
-								[
-									"vi",
-									"x",
-									"mode_normal",
-									null
-								],
-								"sequence": "",
-								"xpos": 6
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "script.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6570,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								498,
-								498
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true,
-							"vintage":
-							{
-								"action": null,
-								"action_count": "",
-								"mode": "mode_normal",
-								"motion": null,
-								"motion_count": "",
-								"must_capture_register_name": false,
-								"partial_sequence": "",
-								"register": "\"",
-								"sequence": "",
-								"xpos": 0
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "script.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6113,
+						"buffer_size": 6629,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5295,
-								5295
+								6629,
+								6629
 							]
 						],
 						"settings":
@@ -594,19 +530,154 @@
 								"repeat_data":
 								[
 									"vi",
-									"r0",
+									"x",
 									"mode_normal",
 									null
 								],
 								"sequence": "",
-								"xpos": 21
+								"xpos": 15
 							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 3315.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "script.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 6956,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6956,
+								6956
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"vintage":
+							{
+								"action": null,
+								"action_count": "",
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"must_capture_register_name": false,
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 0
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/emil/Pulpit/cordova/frozenOcto/config.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 502,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": false,
+								"_vintageous_non_interactive": false,
+								"_vintageous_processing_notation": false,
+								"action": null,
+								"action_count": "",
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"must_capture_register_name": false,
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 0
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 309,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								215,
+								215
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"vintage":
+							{
+								"action": null,
+								"action_count": "",
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"must_capture_register_name": false,
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"vi",
+									"x",
+									"mode_normal",
+									null
+								],
+								"sequence": "",
+								"xpos": 6
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -686,18 +757,18 @@
 	{
 		"_vintageous_last_buffer_search": "this.x",
 		"_vintageous_last_char_search_command": "vi_f",
-		"_vintageous_last_character_search": "r",
+		"_vintageous_last_character_search": "P",
 		"_vintageous_reset_during_init": true,
 		"vintage":
 		{
-			"_cmdline_cd": "/home/emil/Pulpit/pacman"
+			"_cmdline_cd": "/home/emil/Pulpit/cordova/frozenOcto"
 		}
 	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 381.0,
+	"side_bar_width": 306.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
