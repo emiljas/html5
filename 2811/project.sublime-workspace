@@ -4,8 +4,36 @@
 		"selected_items":
 		[
 			[
+				"sol",
+				"solarityLevelRangeCtrl"
+			],
+			[
 				"on",
-				"onmessage"
+				"[pub] ● onchange (ev: Event) => any"
+			],
+			[
+				"ImageD",
+				"putImageData"
+			],
+			[
+				"ima",
+				"imageData"
+			],
+			[
+				"Servr",
+				"ServerResponse"
+			],
+			[
+				"repos",
+				"responseFile"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"try",
+				"tryReponseFile"
 			],
 			[
 				"fpsRe",
@@ -331,7 +359,15 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 206,
+				"buffer_size": 880,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server.ts",
+			"settings":
+			{
+				"buffer_size": 1502,
 				"line_ending": "Unix"
 			}
 		},
@@ -339,7 +375,7 @@
 			"file": "script.ts",
 			"settings":
 			{
-				"buffer_size": 957,
+				"buffer_size": 887,
 				"line_ending": "Unix"
 			}
 		},
@@ -347,7 +383,15 @@
 			"file": "worker.ts",
 			"settings":
 			{
-				"buffer_size": 43,
+				"buffer_size": 604,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/emil/Pulpit/info.txt",
+			"settings":
+			{
+				"buffer_size": 405,
 				"line_ending": "Unix"
 			}
 		}
@@ -432,10 +476,20 @@
 	},
 	"expanded_folders":
 	[
-		"/home/emil/Desktop/html5/2811"
+		"/home/emil/Desktop/html5/2811",
+		"/home/emil/Pulpit/html5/2811",
+		"/home/emil/Pulpit/html5/2811/typings",
+		"/home/emil/Pulpit/html5/2811/typings/node"
 	],
 	"file_history":
 	[
+		"/home/emil/Pulpit/html5/2811/typings/node/node.d.ts",
+		"/home/emil/Pulpit/html5/2811/typings/tsd.d.ts",
+		"/home/emil/Pulpit/html5/2811/server.ts",
+		"/home/emil/Pulpit/html5/2811/server.js",
+		"/home/emil/Pulpit/html5/2811/watchAndBuild.sh",
+		"/home/emil/Pulpit/html5/2811/worker.ts",
+		"/home/emil/Pulpit/html5/2811/script.ts",
 		"/home/emil/.config/sublime-text-3/Packages/User/clang_format.sublime-settings",
 		"/home/emil/Desktop/html5/pacman/script.js",
 		"/home/emil/Desktop/html5/2811/script.ts",
@@ -581,7 +635,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -590,15 +644,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 206,
+						"buffer_size": 880,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								179,
-								179
+								513,
+								513
 							]
 						],
 						"settings":
@@ -620,80 +674,13 @@
 								"register": "\"",
 								"repeat_data":
 								[
-									"native",
-									[
-										"sequence",
-										{
-											"commands":
-											[
-												[
-													"_vi_o",
-													{
-														"count": 1,
-														"mode": "mode_internal_normal"
-													}
-												],
-												[
-													"expand_abbreviation_by_tab",
-													null
-												],
-												[
-													"insert",
-													{
-														"characters": "<canvas"
-													}
-												],
-												[
-													"insert",
-													{
-														"characters": " i"
-													}
-												],
-												[
-													"insert",
-													{
-														"characters": "d="
-													}
-												],
-												[
-													"insert_snippet",
-													{
-														"contents": "\"$0\""
-													}
-												],
-												[
-													"insert",
-													{
-														"characters": "canvas"
-													}
-												],
-												[
-													"move",
-													{
-														"by": "characters",
-														"forward": true
-													}
-												],
-												[
-													"insert",
-													{
-														"characters": "><"
-													}
-												],
-												[
-													"close_tag",
-													{
-														"insert_slash": true
-													}
-												]
-											]
-										}
-									],
-									"mode_insert",
+									"vi",
+									"x",
+									"mode_normal",
 									null
 								],
 								"sequence": "",
-								"xpos": 5
+								"xpos": 66
 							}
 						},
 						"translation.x": 0.0,
@@ -705,19 +692,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "script.ts",
+					"file": "server.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 957,
+						"buffer_size": 1502,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								125,
-								125
+								1397,
+								1397
 							]
 						],
 						"settings":
@@ -727,8 +714,10 @@
 							[
 								"ts"
 							],
-							"highlight_line": false,
+							"spell_check": false,
 							"syntax": "Packages/T3S/theme/Typescript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
 							"vintage":
 							{
 								"_vintageous_glue_until_normal_mode": false,
@@ -746,8 +735,67 @@
 								"repeat_data":
 								[
 									"vi",
-									"p",
+									"x",
 									"mode_normal",
+									null
+								],
+								"sequence": "",
+								"xpos": 9
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "script.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 887,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								372,
+								372
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"extensions":
+							[
+								"ts"
+							],
+							"syntax": "Packages/T3S/theme/Typescript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": false,
+								"_vintageous_non_interactive": false,
+								"_vintageous_processing_notation": false,
+								"action": null,
+								"action_count": "",
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"must_capture_register_name": false,
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"vi",
+									"dd",
+									"mode_internal_normal",
 									null
 								],
 								"sequence": "",
@@ -758,24 +806,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "worker.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 43,
+						"buffer_size": 604,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								40,
-								40
+								363,
+								363
 							]
 						],
 						"settings":
@@ -783,10 +831,10 @@
 							"syntax": "Packages/T3S/theme/Typescript.tmLanguage",
 							"vintage":
 							{
-								"_vintageous_glue_until_normal_mode": true,
+								"_vintageous_glue_until_normal_mode": false,
 								"action": null,
 								"action_count": "",
-								"mode": "mode_insert",
+								"mode": "mode_normal",
 								"motion": null,
 								"motion_count": "",
 								"must_capture_register_name": false,
@@ -802,9 +850,28 @@
 											"commands":
 											[
 												[
+													"_vi_a",
+													{
+														"count": 1,
+														"mode": "mode_internal_normal"
+													}
+												],
+												[
+													"typescript_completion",
+													null
+												],
+												[
 													"insert",
 													{
-														"characters": "essage"
+														"characters": "Da"
+													}
+												],
+												[
+													"insert_completion",
+													{
+														"completion": " ◊ ImageData ImageData",
+														"snippet": "ImageData",
+														"trigger": " ◊ ImageData ImageData"
 													}
 												],
 												[
@@ -814,69 +881,64 @@
 													}
 												],
 												[
-													"run_macro_file",
+													"move",
 													{
-														"file": "res://Packages/Default/Delete Left Right.sublime-macro"
-													}
-												],
-												[
-													"left_delete",
-													null
-												],
-												[
-													"left_delete",
-													null
-												],
-												[
-													"left_delete",
-													null
-												],
-												[
-													"left_delete",
-													null
-												],
-												[
-													"left_delete",
-													null
-												],
-												[
-													"left_delete",
-													null
-												],
-												[
-													"left_delete",
-													null
-												],
-												[
-													"left_delete",
-													null
-												],
-												[
-													"left_delete",
-													null
-												],
-												[
-													"left_delete",
-													null
-												],
-												[
-													"left_delete",
-													null
-												],
-												[
-													"insert",
-													{
-														"characters": "pos"
+														"by": "characters",
+														"forward": true
 													}
 												]
 											]
 										}
 									],
-									null,
+									"mode_insert",
 									null
 								],
 								"sequence": "",
-								"xpos": 17
+								"xpos": 39
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/emil/Pulpit/info.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 405,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": false,
+								"_vintageous_non_interactive": false,
+								"_vintageous_processing_notation": false,
+								"action": null,
+								"action_count": "",
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"must_capture_register_name": false,
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 0
 							}
 						},
 						"translation.x": 0.0,
@@ -924,6 +986,10 @@
 	{
 		"height": 0.0
 	},
+	"output.typescript_output":
+	{
+		"height": 112.0
+	},
 	"project": "project.sublime-project",
 	"replace":
 	{
@@ -957,10 +1023,12 @@
 	"selected_group": 0,
 	"settings":
 	{
+		"_vintageous_last_char_search_command": "vi_f",
+		"_vintageous_last_character_search": "(",
 		"_vintageous_reset_during_init": true,
 		"vintage":
 		{
-			"_cmdline_cd": "/home/emil/Desktop/html5/2811"
+			"_cmdline_cd": "/home/emil/Pulpit"
 		}
 	},
 	"show_minimap": true,
