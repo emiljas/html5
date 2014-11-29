@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"on",
+				"onmessage"
+			],
+			[
 				"fpsRe",
 				"fpsRefreshTimesCounter"
 			],
@@ -312,10 +316,6 @@
 				"onmessage"
 			],
 			[
-				"on",
-				"onreadystatechange"
-			],
-			[
 				"me",
 				"messageEvent"
 			],
@@ -328,26 +328,31 @@
 	"buffers":
 	[
 		{
-			"contents": "var FRAME_BORDER = 25;\n\nclass Pacman {\n  private static RADIUS = 70;\n  private static EYE_RADIUS = Pacman.RADIUS / 10;\n  private static EYE_RELATIVE_X = -Pacman.RADIUS / 3;\n  private static EYE_RELATIVE_Y = -Pacman.RADIUS / 2.5;\n  private static BORDER_WIDTH = 3;\n  private static CHANGE_MOUTH_STATE_INTERVAL = 1000;\n\n  private x: number = 100;\n  private y: number = 100;\n  private isMouthOpen: boolean = true;\n  private isMovingForward: boolean = true;\n\n\n  private lastChangeMouthStateTime: number;\n\n  public draw(time: number, timeDiff: number) {\n    if(!this.lastChangeMouthStateTime)\n      this.lastChangeMouthStateTime = time;\n    if(time - this.lastChangeMouthStateTime > Pacman.CHANGE_MOUTH_STATE_INTERVAL) {\n      this.isMouthOpen = !this.isMouthOpen;\n      this.lastChangeMouthStateTime = time;\n    }\n\n    if(this.x + Pacman.RADIUS > canvasWidth - FRAME_BORDER)\n      this.isMovingForward = false;\n    if(this.x - Pacman.RADIUS < FRAME_BORDER)\n      this.isMovingForward = true;\n\n    if(this.isMovingForward)\n      this.x += (75 / 1000) * timeDiff;\n    else\n      this.x -= (75 / 1000) * timeDiff;\n\n\n    if(this.isMouthOpen)\n      this.drawWithOpenMouth();\n    else\n      this.drawWithClosedMouth();\n  }\n\n  //OPEN MOUTH\n\n  private drawWithOpenMouth() {\n    this.drawBorderWithOpenMouth();\n    this.applyBackgroundGradient();\n\n    context.beginPath();\n    context.arc(this.x, this.y, Pacman.RADIUS - Pacman.BORDER_WIDTH, 0.2*Math.PI, 1.2*Math.PI, false);\n    context.fill();\n\n    context.beginPath();\n    context.arc(this.x, this.y, Pacman.RADIUS - Pacman.BORDER_WIDTH, -0.2*Math.PI, 0.8*Math.PI, true);\n    context.fill();\n\n    this.drawOpenMouth();\n    this.drawEye();\n  }\n\n  private drawOpenMouth() {\n    context.lineWidth = Pacman.BORDER_WIDTH;\n    context.translate(this.x, this.y);\n    context.strokeStyle = \"#000000\";\n    context.rotate(0.2*Math.PI);\n    context.beginPath();\n    context.moveTo(0, 0);\n    context.lineTo(Pacman.RADIUS, 0);\n    context.stroke();\n    context.setTransform(1, 0, 0, 1, 0, 0);\n\n    context.translate(this.x, this.y);\n    context.strokeStyle = \"#000000\";\n    context.rotate(-0.2*Math.PI);\n    context.beginPath();\n    context.moveTo(0, 0);\n    context.lineTo(Pacman.RADIUS, 0);\n    context.stroke();\n    context.setTransform(1, 0, 0, 1, 0, 0);\n  }\n\n  private drawBorderWithOpenMouth() {\n    context.fillStyle = \"#000000\";\n    context.beginPath();\n    context.arc(this.x, this.y, Pacman.RADIUS, 0.2*Math.PI, 1.2*Math.PI, false);\n    context.fill();\n\n    context.beginPath();\n    context.arc(this.x, this.y, Pacman.RADIUS, -0.2*Math.PI, 0.8*Math.PI, true);\n    context.fill();\n  }\n\n  //END OPEN MOUTH\n\n  //CLOSED MOUTH\n\n  private drawWithClosedMouth() {\n    this.drawBorderWithClosedMouth();\n    this.applyBackgroundGradient();\n\n    context.beginPath();\n    context.arc(this.x, this.y, Pacman.RADIUS - Pacman.BORDER_WIDTH, 0, 2*Math.PI, false);\n    context.fill();\n\n    this.drawClosedMouth();\n    this.drawEye();\n  }\n\n  private drawClosedMouth() {\n    context.beginPath();\n    context.moveTo(this.x, this.y);\n    context.lineTo(this.x + Pacman.RADIUS, this.y);\n    context.stroke();\n  }\n\n  private drawEye() {\n    context.beginPath();\n    context.fillStyle = \"#000000\";\n    context.arc(this.x+Pacman.EYE_RELATIVE_X, this.y+Pacman.EYE_RELATIVE_Y, Pacman.EYE_RADIUS, 0, 2*Math.PI, false);\n    context.fill();\n  }\n\n  private applyBackgroundGradient() {\n    var gradient = context.createLinearGradient(0, this.y-Pacman.RADIUS, 0, this.y+Pacman.RADIUS);\n    gradient.addColorStop(0, \"#FDD300\");\n    gradient.addColorStop(1, \"#E57D00\");\n    context.fillStyle = gradient;\n  }\n\n  private drawBorderWithClosedMouth() {\n    context.fillStyle = \"#000000\";\n    context.beginPath();\n    context.arc(this.x, this.y, Pacman.RADIUS, 0, 2*Math.PI, false);\n    context.fill();\n\n\n    context.strokeStyle = \"#000000\";\n    context.lineWidth = Pacman.BORDER_WIDTH;\n\n    context.beginPath();\n    context.arc(this.x, this.y, Pacman.RADIUS, 0, 2*Math.PI, false);\n    context.fill();\n  }\n\n  //END CLOSED MOUTH\n}\n\nvar canvas: HTMLCanvasElement;\nvar canvasWidth: number, canvasHeight: number;\nvar context: CanvasRenderingContext2D;\nvar pacman = new Pacman();\n\nwindow.addEventListener(\"load\", () => {\n  canvas = <HTMLCanvasElement>document.getElementById(\"canvas\");\n  canvasWidth = canvas.width;\n  canvasHeight = canvas.height;\n  context = canvas.getContext(\"2d\");\n\n  window.requestAnimationFrame(gameLoop);\n\n}, false);\n\nfunction gameLoop(time: number) {\n  clearCanvas();\n  draw(time);\n  window.requestAnimationFrame(gameLoop);\n}\n\nfunction clearCanvas() {\n  context.clearRect(0, 0, canvasWidth, canvasHeight);\n}\n\nvar lastDrawTime: number;\nfunction draw(time) {\n  if(!lastDrawTime)\n    lastDrawTime = time;\n    var timeDiff = time - lastDrawTime;\n  drawFrame();\n  drawFPS(timeDiff);\n  pacman.draw(time, timeDiff);\n  lastDrawTime = time;\n}\n\nfunction drawFrame() {\n  context.beginPath();\n  context.moveTo(0, 0);\n  context.lineWidth = FRAME_BORDER * 2;\n  context.strokeStyle = \"#ff0000\";\n  context.lineTo(0, 600);\n  context.lineTo(800, 600);\n  context.lineTo(800, 0);\n  context.lineTo(0, 0);\n  context.stroke();\n}\n\nvar fps;\nvar fpsTemp = 0;\nvar FPS_REFRESH_TIMES = 60;\nvar fpsRefreshTimesCounter = 0;\nfunction drawFPS(timeDiff: number) {\n  fpsTemp += timeDiff;\n  if(!fps || fpsRefreshTimesCounter == FPS_REFRESH_TIMES) {\n    alert(fpsRefreshTimesCounter);h\n    fps = (1000 / fpsTemp) * fpsRefreshTimesCounter;\n    fpsRefreshTimesCounter = 0;\n    fpsTemp = 0;\n  }\n  context.fillStyle = \"#000000\";\n  context.fillText(fps.toString(), 50, 50);\n  fpsRefreshTimesCounter++;\n}",
-			"file": "pacman/script.ts",
-			"file_size": 5577,
-			"file_write_time": 130611556235334449,
+			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 5578,
+				"buffer_size": 206,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "webgl/shared/gl-matrix.js",
+			"file": "script.ts",
 			"settings":
 			{
-				"buffer_size": 111295,
+				"buffer_size": 957,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "worker.ts",
+			"settings":
+			{
+				"buffer_size": 43,
 				"line_ending": "Unix"
 			}
 		}
 	],
-	"build_system": "Packages/User/custom-make.sublime-build",
+	"build_system": "",
 	"command_palette":
 	{
 		"height": 58.0,
@@ -427,11 +432,17 @@
 	},
 	"expanded_folders":
 	[
-		"/home/emil/Desktop/html5",
-		"/home/emil/Desktop/html5/pacman"
+		"/home/emil/Desktop/html5/2811"
 	],
 	"file_history":
 	[
+		"/home/emil/.config/sublime-text-3/Packages/User/clang_format.sublime-settings",
+		"/home/emil/Desktop/html5/pacman/script.js",
+		"/home/emil/Desktop/html5/2811/script.ts",
+		"/home/emil/Desktop/html5/pacman/script.ts",
+		"/home/emil/.config/sublime-text-3/Packages/User/clang_format_custom.sublime-settings",
+		"/home/emil/Desktop/html5/2811/main.cpp",
+		"/home/emil/Desktop/html5/2811/project.sublime-project",
 		"/home/emil/Desktop/html5/webgl/arms.html",
 		"/home/emil/Desktop/html5/webgl/arms.ts",
 		"/home/emil/Desktop/html5/webgl/shared/GLUtils.ts",
@@ -528,7 +539,7 @@
 	],
 	"find":
 	{
-		"height": 36.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -570,24 +581,143 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "pacman/script.ts",
+					"file": "index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5578,
+						"buffer_size": 206,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5364,
-								5364
+								179,
+								179
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": true,
+								"_vintageous_non_interactive": false,
+								"_vintageous_processing_notation": false,
+								"action": null,
+								"action_count": "",
+								"mode": "mode_insert",
+								"motion": null,
+								"motion_count": "",
+								"must_capture_register_name": false,
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"native",
+									[
+										"sequence",
+										{
+											"commands":
+											[
+												[
+													"_vi_o",
+													{
+														"count": 1,
+														"mode": "mode_internal_normal"
+													}
+												],
+												[
+													"expand_abbreviation_by_tab",
+													null
+												],
+												[
+													"insert",
+													{
+														"characters": "<canvas"
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": " i"
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "d="
+													}
+												],
+												[
+													"insert_snippet",
+													{
+														"contents": "\"$0\""
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "canvas"
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "><"
+													}
+												],
+												[
+													"close_tag",
+													{
+														"insert_slash": true
+													}
+												]
+											]
+										}
+									],
+									"mode_insert",
+									null
+								],
+								"sequence": "",
+								"xpos": 5
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "script.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 957,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								125,
+								125
 							]
 						],
 						"settings":
@@ -597,9 +727,8 @@
 							[
 								"ts"
 							],
+							"highlight_line": false,
 							"syntax": "Packages/T3S/theme/Typescript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
 							"vintage":
 							{
 								"_vintageous_glue_until_normal_mode": false,
@@ -622,64 +751,139 @@
 									null
 								],
 								"sequence": "",
-								"xpos": 34
+								"xpos": 0
 							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 3162.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
-					"buffer": 1,
-					"file": "webgl/shared/gl-matrix.js",
+					"buffer": 2,
+					"file": "worker.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 111295,
+						"buffer_size": 43,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7661,
-								7661
+								40,
+								40
 							]
 						],
 						"settings":
 						{
-							"highlight_line": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true,
+							"syntax": "Packages/T3S/theme/Typescript.tmLanguage",
 							"vintage":
 							{
+								"_vintageous_glue_until_normal_mode": true,
 								"action": null,
 								"action_count": "",
-								"mode": "mode_normal",
+								"mode": "mode_insert",
 								"motion": null,
 								"motion_count": "",
 								"must_capture_register_name": false,
+								"normal_insert_count": "1",
 								"partial_sequence": "",
 								"register": "\"",
+								"repeat_data":
+								[
+									"native",
+									[
+										"sequence",
+										{
+											"commands":
+											[
+												[
+													"insert",
+													{
+														"characters": "essage"
+													}
+												],
+												[
+													"insert_snippet",
+													{
+														"contents": "($0)"
+													}
+												],
+												[
+													"run_macro_file",
+													{
+														"file": "res://Packages/Default/Delete Left Right.sublime-macro"
+													}
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"insert",
+													{
+														"characters": "pos"
+													}
+												]
+											]
+										}
+									],
+									null,
+									null
+								],
 								"sequence": "",
-								"xpos": 36
+								"xpos": 17
 							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 5021.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -687,7 +891,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 25.0
 	},
 	"input":
 	{
@@ -702,18 +906,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.970326409496,
 			1.0
 		],
 		"rows":
@@ -723,22 +920,14 @@
 		]
 	},
 	"menu_visible": true,
-	"output.exec":
-	{
-		"height": 172.0
-	},
 	"output.find_results":
 	{
 		"height": 0.0
 	},
-	"output.typescript_output":
-	{
-		"height": 118.0
-	},
 	"project": "project.sublime-project",
 	"replace":
 	{
-		"height": 66.0
+		"height": 46.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -768,20 +957,17 @@
 	"selected_group": 0,
 	"settings":
 	{
-		"_vintageous_last_buffer_search": "viewMatrix",
-		"_vintageous_last_char_search_command": "vi_big_f",
-		"_vintageous_last_character_search": "=",
 		"_vintageous_reset_during_init": true,
 		"vintage":
 		{
-			"_cmdline_cd": "/home/emil/Desktop/html5/pacman"
+			"_cmdline_cd": "/home/emil/Desktop/html5/2811"
 		}
 	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
-	"side_bar_width": 235.0,
+	"side_bar_visible": true,
+	"side_bar_width": 204.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
