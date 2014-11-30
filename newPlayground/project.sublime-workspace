@@ -1,0 +1,999 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sol",
+				"solarityLevelRangeCtrl"
+			],
+			[
+				"on",
+				"[pub] ● onchange (ev: Event) => any"
+			],
+			[
+				"ImageD",
+				"putImageData"
+			],
+			[
+				"ima",
+				"imageData"
+			],
+			[
+				"Servr",
+				"ServerResponse"
+			],
+			[
+				"repos",
+				"responseFile"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"try",
+				"tryReponseFile"
+			],
+			[
+				"fpsRe",
+				"fpsRefreshTimesCounter"
+			],
+			[
+				"fps",
+				"fpsRefreshI"
+			],
+			[
+				"viewM",
+				"viewMatrix2"
+			],
+			[
+				"tran",
+				"translateY"
+			],
+			[
+				"move",
+				"movementMatrix2"
+			],
+			[
+				"tra",
+				"translate"
+			],
+			[
+				"tr",
+				"translateY"
+			],
+			[
+				"isLeftButtonD",
+				"isLeftButtonDown"
+			],
+			[
+				"isL",
+				"isLeftButton"
+			],
+			[
+				"isLe",
+				"isLeftButtonDown"
+			],
+			[
+				"isRightButtonD",
+				"isRightButtonDown"
+			],
+			[
+				"isCli",
+				"isClickedAndMoved"
+			],
+			[
+				"isCl",
+				"isClickedAndMoved"
+			],
+			[
+				"pre",
+				"[pub] ○ preventDefault (): void"
+			],
+			[
+				"mo",
+				"movementMatrix2"
+			],
+			[
+				"viewMa",
+				"viewMatrix2"
+			],
+			[
+				"arm2",
+				"arm2Vertex"
+			],
+			[
+				"arm2F",
+				"arm2Faces"
+			],
+			[
+				"arm1",
+				"  arm1ProjectionMatrixLocation number"
+			],
+			[
+				"WebGL",
+				" ◊ WebGLProgram WebGLProgram"
+			],
+			[
+				"get",
+				"[pub] ○ getUniform (program: WebGLProgram, location: WebGLUniformLocation): any"
+			],
+			[
+				"ro",
+				" ○ rotateY (m: any, angle: any): void"
+			],
+			[
+				"enable",
+				"[pub] ○ enable (cap: number): void"
+			],
+			[
+				"proje",
+				"armProjectionMatrixLocation"
+			],
+			[
+				"gl",
+				"glMatrix"
+			],
+			[
+				"armFaces",
+				"  armFacesBuffer number[]"
+			],
+			[
+				"arm",
+				"armVertexBuffer"
+			],
+			[
+				"fra",
+				"fragmentShader"
+			],
+			[
+				"ver",
+				"vertexShaderSource"
+			],
+			[
+				"STAT",
+				"[pub] ● STATIC_DRAW number"
+			],
+			[
+				"UNSI",
+				"[pub] ● UNSIGNED_SHORT number"
+			],
+			[
+				"trian",
+				"triangleVertex"
+			],
+			[
+				"posi",
+				"positionLocation"
+			],
+			[
+				"verte",
+				"vertexShader"
+			],
+			[
+				"vertex",
+				"vertexShaderSource"
+			],
+			[
+				"shader",
+				"shaderVertexSource"
+			],
+			[
+				"WebGLRe",
+				" ◊ WebGLRenderingContext WebGLRenderingContext"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"vM",
+				"vMatrix"
+			],
+			[
+				"uniformMa",
+				"[pub] ○ uniformMatrix4fv (location: WebGLUniformLocation, transpose: boolean, value: Float32Array): void"
+			],
+			[
+				"rot",
+				" ○ rotateY (m: any, angle: any): void"
+			],
+			[
+				"d",
+				"degToRad"
+			],
+			[
+				"triangleVer",
+				"  triangleVertexBuffer2 number[]"
+			],
+			[
+				"tri",
+				"triangleVertex2"
+			],
+			[
+				"createB",
+				"[pub] ○ createBuffer (): WebGLBuffer"
+			],
+			[
+				"triangleVertex",
+				"triangleVertexBuffer"
+			],
+			[
+				"en",
+				"[pub] ○ enableVertexAttribArray (index: number): void"
+			],
+			[
+				"can",
+				"canvas"
+			],
+			[
+				"HTMLC",
+				" ◊ HTMLCanvasElement HTMLCanvasElement"
+			],
+			[
+				"FLOAT",
+				"[pub] ● FLOAT number"
+			],
+			[
+				"tria",
+				"triangleFacesBuffer"
+			],
+			[
+				"ARRAY_BUFF",
+				"[pub] ● ARRAY_BUFFER number"
+			],
+			[
+				"shaderVerte",
+				"  shaderVertexSource string"
+			],
+			[
+				"cre",
+				"[pub] ○ createShader (type: number): WebGLShader"
+			],
+			[
+				"getC",
+				"[pub] ○ getContext (contextId: \"2d\"): CanvasRenderingContext2D (+ 2 overload(s))"
+			],
+			[
+				"shade",
+				"  shaderScript HTMLScriptElement"
+			],
+			[
+				"FRAGMENT_",
+				"[pub] ● FRAGMENT_SHADER number"
+			],
+			[
+				"node",
+				"[pub] ● nodeType number"
+			],
+			[
+				"sha",
+				"shaderScript"
+			],
+			[
+				"Web",
+				"WebGLRenderingContext"
+			],
+			[
+				"WebGLR",
+				" ◊ WebGLRenderingContext WebGLRenderingContext"
+			],
+			[
+				"fr",
+				"framesCounter"
+			],
+			[
+				"load",
+				"loadImage"
+			],
+			[
+				"timerM",
+				"timerMethod"
+			],
+			[
+				"time",
+				"timerMethodType"
+			],
+			[
+				"cal",
+				"callback"
+			],
+			[
+				"calc",
+				"calculateSecondValue"
+			],
+			[
+				"ca",
+				"calculateMinuteValue"
+			],
+			[
+				"getMi",
+				"[pub] ○ getMilliseconds (): number"
+			],
+			[
+				"getM",
+				"getMilliseconds"
+			],
+			[
+				"draw",
+				"drawHand"
+			],
+			[
+				"mi",
+				"minuteHandLength"
+			],
+			[
+				"tex",
+				"[pub] ● textAlign string"
+			],
+			[
+				"nume",
+				"numeralWidth"
+			],
+			[
+				"arc",
+				"[pub] ○ arc (x: number, y: number, radius: number, startAngle: number, endAngle: number, anticlockwise?: boolean): void"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"o",
+				"onmessage"
+			],
+			[
+				"me",
+				"messageEvent"
+			],
+			[
+				"loadC",
+				"loadCallback"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 880,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server.ts",
+			"settings":
+			{
+				"buffer_size": 1502,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "script.ts",
+			"settings":
+			{
+				"buffer_size": 887,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "worker.ts",
+			"settings":
+			{
+				"buffer_size": 604,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 58.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Paka",
+				"Package Control: Install Package"
+			],
+			[
+				"Pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"package ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Page",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Discover Packages"
+			],
+			[
+				"Pa",
+				"Package Control: Install Package"
+			],
+			[
+				"pretty",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"for",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"Package",
+				"Package Control: Add Repository"
+			],
+			[
+				"set json",
+				"Set Syntax: JSON"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 181.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/emil/Desktop/html5/2811",
+		"/home/emil/Pulpit/html5/2811",
+		"/home/emil/Pulpit/html5/2811/typings",
+		"/home/emil/Pulpit/html5/2811/typings/node"
+	],
+	"file_history":
+	[
+		"/home/emil/Pulpit/info.txt",
+		"/home/emil/Pulpit/html5/2811/typings/node/node.d.ts",
+		"/home/emil/Pulpit/html5/2811/typings/tsd.d.ts",
+		"/home/emil/Pulpit/html5/2811/server.ts",
+		"/home/emil/Pulpit/html5/2811/server.js",
+		"/home/emil/Pulpit/html5/2811/watchAndBuild.sh",
+		"/home/emil/Pulpit/html5/2811/worker.ts",
+		"/home/emil/Pulpit/html5/2811/script.ts",
+		"/home/emil/.config/sublime-text-3/Packages/User/clang_format.sublime-settings",
+		"/home/emil/Desktop/html5/pacman/script.js",
+		"/home/emil/Desktop/html5/2811/script.ts",
+		"/home/emil/Desktop/html5/pacman/script.ts",
+		"/home/emil/.config/sublime-text-3/Packages/User/clang_format_custom.sublime-settings",
+		"/home/emil/Desktop/html5/2811/main.cpp",
+		"/home/emil/Desktop/html5/2811/project.sublime-project",
+		"/home/emil/Desktop/html5/webgl/arms.html",
+		"/home/emil/Desktop/html5/webgl/arms.ts",
+		"/home/emil/Desktop/html5/webgl/shared/GLUtils.ts",
+		"/home/emil/Desktop/html5/webgl/shared/MathUtils.ts",
+		"/C/Users/Emil/Desktop/webglsamples-f6a5a16e0413/lots-o-objects/lots-o-objects-draw-elements.html",
+		"/C/Users/Emil/Desktop/webglsamples-f6a5a16e0413/lots-o-objects/index.html",
+		"/C/Users/Emil/Desktop/html5/webgl/shared/MathUtils.js",
+		"/C/Users/Emil/Desktop/html5/webgl/triangle.ts",
+		"/C/Users/Emil/Desktop/html5/webgl/playground.ts",
+		"/C/Users/Emil/Desktop/html5/webgl/triangle.js",
+		"/C/Users/Emil/Desktop/html5/webgl/shared/MathUtils.ts",
+		"/C/Users/Emil/Desktop/html5/webgl/makefile",
+		"/C/Users/Emil/Desktop/html5/webgl/triangle.html",
+		"/C/Users/Emil/Desktop/html5/webgl/shared/triangle.ts",
+		"/C/Users/Emil/Desktop/html5/webgl/playground.html",
+		"/C/Users/Emil/Desktop/html5/webgl/shared/GLUtils.ts",
+		"/C/Users/Emil/Desktop/html5/webgl/WebGLUtils.ts",
+		"/C/Users/Emil/Desktop/index.html",
+		"/C/Users/Emil/Desktop/html5/balls30FPS/index.html",
+		"/C/Users/Emil/Desktop/html5/balls/index.html",
+		"/C/Users/Emil/Downloads/html5/examples/ch19/classes/ball.js",
+		"/C/Users/Emil/Desktop/html5/fileApi/index.html",
+		"/C/Users/Emil/Desktop/html5/selectiveRequestAnimationFrame/setTimeout.html",
+		"/C/Users/Emil/Desktop/html5/selectiveRequestAnimationFrame/requestAnimationFrame.html",
+		"/C/Users/Emil/Desktop/html5/selectiveRequestAnimationFrame/script.ts",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/User/custom-make.sublime-build",
+		"/C/Users/Emil/Desktop/html5/selectiveRequestAnimationFrame/whyRequestAnimationFrame.txt",
+		"/C/Users/Emil/Desktop/html5/selectiveRequestAnimationFrame/makefile",
+		"/C/Users/Emil/Desktop/html5/selectiveRequestAnimationFrame/requestAnimationFrameWithSetTimeout.html",
+		"/C/Users/Emil/Desktop/html5/selectiveRequestAnimationFrame/requestAnimationFrameWithIf.html",
+		"/C/Users/Emil/Desktop/html5/selectiveRequestAnimationFrame/build.bat",
+		"/C/Users/Emil/Desktop/html5/selectiveRequestAnimationFrame/script.js",
+		"/C/Users/Emil/TypeScript/bin/tsc.js",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/c/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/T3S/bin/lib.d.ts",
+		"/C/Users/Emil/Desktop/loadImagesByWebWorker/startUpServer.js",
+		"/C/Users/Emil/Desktop/loadImagesByWebWorker/build.bat",
+		"/C/Users/Emil/Desktop/loadImagesByWebWorker/downloadImageWorker.ts",
+		"/C/Users/Emil/Desktop/loadImagesByWebWorker/downloadImageWorker.js",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/User/T3S.sublime-settings",
+		"/C/Users/Emil/Desktop/loadImagesByWebWorker/index.html",
+		"/C/Users/Emil/Desktop/loadImagesByWebWorker/project.sublime-project",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/User/build-bat.sublime-build",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/User/build-ps1.sublime-build",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/T3S/examples/sublimeproject/project.sublime-project",
+		"/C/Users/Emil/Desktop/loadImagesByWebWorker/script.js",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/T3S/T3S.sublime-settings",
+		"/C/Users/Emil/Desktop/loadImagesByWebWorker/a.js",
+		"/C/Users/Emil/Desktop/loadImagesByWebWorker/script.ts",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/User/Typescript.sublime-settings",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/T3S/Typescript.sublime-settings",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/T3S/Typescript.build.js",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/Better TypeScript/TypeScript.sublime-settings",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/Typescript.sublime-build",
+		"/C/Users/Emil/Desktop/kasuj/kasuj.js",
+		"/C/Users/Emil/AppData/Roaming/npm/node_modules/typescript-tools/tss.ts",
+		"/C/Users/Emil/AppData/Roaming/npm/node_modules/typescript-tools/bin/tss",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/C/Users/Emil/AppData/Roaming/npm/node_modules/typescript-tools/tests/test.ts",
+		"/C/Users/Emil/AppData/Roaming/npm/node_modules/typescript-tools/script.results",
+		"/C/Users/Emil/AppData/Local/Sublime Text 3/Cache/Better TypeScript/TypeScript.tmLanguage.cache",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/User/Typescript.sublime-build",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Emil/Desktop/kasuj/test.ts",
+		"/C/Users/Emil/Desktop/opengl/ex1/index.html",
+		"/C/Users/Emil/Desktop/TypeScript/src/services/services.ts",
+		"/C/Users/Emil/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Emil/Desktop/kasuj/script.ts",
+		"/C/Users/Emil/Desktop/TypeScript/Jakefile",
+		"/C/Program Files (x86)/Microsoft SDKs/TypeScript/1.0/tsc.js",
+		"/C/Users/Emil/Desktop/TypeScript/src/compiler/commandLineParser.ts",
+		"/C/Users/Emil/Desktop/TypeScript/src/compiler/core.ts",
+		"/C/Users/Emil/Desktop/TypeScript/tests/webTestServer.ts",
+		"/C/Users/Emil/Desktop/TypeScript/tests/cases/unittests/services/formatting/getSmartIndentAtLineNumber.ts",
+		"/C/Users/Emil/Desktop/TypeScript/src/compiler/scanner.ts",
+		"/C/Users/Emil/Desktop/TypeScript/tests/cases/compiler/aliasAssignments.ts",
+		"/C/Users/Emil/Desktop/TypeScript/tests/baselines/local/aliasUsageInArray.js",
+		"/C/Users/Emil/AppData/Local/Microsoft/VisualStudio/12.0/Extensions/0gy0j1bu.gj2/JSRunners/chutzpahRunner.js",
+		"/C/Users/Emil/Desktop/RWAJMAN/projects/SOLID/DocumentOutput.json",
+		"/C/Users/Emil/Desktop/RWAJMAN/projects/SOLID/DocumentInput.json",
+		"/C/Users/Emil/Desktop/RWAJMAN/projects/SOLID/DocumentInput.xml",
+		"/C/Users/Emil/Desktop/RWAJMAN/projects/SOLID/Document.json",
+		"/C/Users/Emil/Desktop/samsungPlus/AriesVE.ops",
+		"/C/Users/Emil/Downloads/scheduler/samples/CalendarApp/js/default.js",
+		"/C/Users/Emil/Downloads/dhtmlxScheduler_v37_win_130220/samples/CalendarApp/js/default.js",
+		"/C/Users/Emil/Desktop/RWAJMAN/projects/Calender/Calender.Tests/Calender.Tests.csproj",
+		"/C/Users/Emil/Desktop/RWAJMAN/projects/Calender/Calender/Calender.jsproj",
+		"/C/Users/Emil/Desktop/TypeScriptSamples/win8.1/encyclopedia/Encyclopedia/Encyclopedia.jsproj",
+		"/C/Users/Emil/Desktop/config",
+		"/C/Users/Emil/AppData/Local/Packages/ee6f1a35-4c72-49a1-b4cb-3b5f09af08a6_jvw2cr4a7cpjj/Settings/roaming.lock",
+		"/C/Users/Emil/AppData/Local/Packages/ee6f1a35-4c72-49a1-b4cb-3b5f09af08a6_jvw2cr4a7cpjj/Settings/settings.dat"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 96.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"arm",
+			"=\"../",
+			"\\",
+			" - Copy",
+			"\\\"",
+			"dhtmlxScheduler - Copy"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"arm1",
+			"\\\\",
+			"",
+			"\"",
+			"dhtmlxScheduler"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 880,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								513,
+								513
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": true,
+								"_vintageous_non_interactive": false,
+								"_vintageous_processing_notation": false,
+								"action": null,
+								"action_count": "",
+								"mode": "mode_insert",
+								"motion": null,
+								"motion_count": "",
+								"must_capture_register_name": false,
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"vi",
+									"x",
+									"mode_normal",
+									null
+								],
+								"sequence": "",
+								"xpos": 66
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "server.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1502,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1397,
+								1397
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"extensions":
+							[
+								"ts"
+							],
+							"spell_check": false,
+							"syntax": "Packages/T3S/theme/Typescript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": false,
+								"_vintageous_non_interactive": false,
+								"_vintageous_processing_notation": false,
+								"action": null,
+								"action_count": "",
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"must_capture_register_name": false,
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"vi",
+									"x",
+									"mode_normal",
+									null
+								],
+								"sequence": "",
+								"xpos": 9
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "script.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 887,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								372,
+								372
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"extensions":
+							[
+								"ts"
+							],
+							"syntax": "Packages/T3S/theme/Typescript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": false,
+								"_vintageous_non_interactive": false,
+								"_vintageous_processing_notation": false,
+								"action": null,
+								"action_count": "",
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"must_capture_register_name": false,
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"vi",
+									"dd",
+									"mode_internal_normal",
+									null
+								],
+								"sequence": "",
+								"xpos": 0
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "worker.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 604,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								363,
+								363
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"extensions":
+							[
+								"ts"
+							],
+							"syntax": "Packages/T3S/theme/Typescript.tmLanguage",
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": false,
+								"_vintageous_non_interactive": false,
+								"_vintageous_processing_notation": false,
+								"action": null,
+								"action_count": "",
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"must_capture_register_name": false,
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"native",
+									[
+										"sequence",
+										{
+											"commands":
+											[
+												[
+													"_vi_a",
+													{
+														"count": 1,
+														"mode": "mode_internal_normal"
+													}
+												],
+												[
+													"typescript_completion",
+													null
+												],
+												[
+													"insert",
+													{
+														"characters": "Da"
+													}
+												],
+												[
+													"insert_completion",
+													{
+														"completion": " ◊ ImageData ImageData",
+														"snippet": "ImageData",
+														"trigger": " ◊ ImageData ImageData"
+													}
+												],
+												[
+													"insert_snippet",
+													{
+														"contents": "($0)"
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												]
+											]
+										}
+									],
+									"mode_insert",
+									null
+								],
+								"sequence": "",
+								"xpos": 48
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.typescript_output":
+	{
+		"height": 112.0
+	},
+	"project": "project.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"_vintageous_last_char_search_command": "vi_f",
+		"_vintageous_last_character_search": "(",
+		"_vintageous_reset_during_init": true,
+		"vintage":
+		{
+			"_cmdline_cd": "/home/emil/Pulpit/html5/2811"
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 204.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
