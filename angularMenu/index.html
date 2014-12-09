@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+  #left {
+    border: 1px solid black;
+    width: 200px;
+    height: 300px;
+    float: left;
+  }
+
+  #main {
+    border: 1px solid black;
+    width: 200px;
+    height: 300px;
+    float: left;
+  }
+  </style>
+</head>
+<body>
+  <div id="left" ng-include="'menu.html'"></div>
+  <div id="main" ng-controller="MainController as main">
+    <span ng-bind="main.content"></span>
+  </div>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

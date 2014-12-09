@@ -1,12 +1,98 @@
 var canvas: HTMLCanvasElement, context: CanvasRenderingContext2D;
 var canvasWidth: number, canvasHeight: number;
 
-var isFilter1Enabled = false, isFilter2Enabled = false;
-var originalImage: HTMLImageElement;
-var originalText: string;
+var logsTable: HTMLTableElement;
 
+class State {
+  public Image: HTMLImageElement;
+  public ImageX: number;
+  public ImageY: number;
+  public ImageWidth: number;
+  public ImageHeight: number;
+
+  public Text: string;
+
+  public IsFilter1Enabled = false;
+  public IsFilter2Enabled = false;
+}
+
+enum LogType {
+  PICTURE_CHANGE,
+  TEXT_CACHE
+}
+
+class Log {
+  constructor (
+    public Type: LogType,
+    public CreateDate: number,
+    public Content: string
+  ) { }
+}
+
+var state = new State();
+
+var db: IDBDatabase;
+
+var request = window.indexedDB.open("db", 1);
+
+request.onupgradeneeded = (event) => {
+  var db = <IDBDatabase>request.result;
+  db.createObjectStore("logs", {
+    autoIncrement: true
+  });
+};
+
+request.onerror = (event) => {
+  console.log("create indexeddb permission denied");
+};
+
+request.onsuccess = (event) => {
+  console.log("success");
+  db = request.result;
+  loadLogs();
+};
+
+function loadLogs() {
+  var transaction = db.transaction("logs", "readonly");
+  var request = transaction.objectStore("logs").openCursor();
+  request.onsuccess = (event) => {
+    var cursor = <IDBCursorWithValue>event.target["result"];
+    if(cursor) {
+      var type = <LogType>cursor.value.Type;
+      var cssClass = type === LogType.PICTURE_CHANGE ? "pictureRow" : "textRow";
+
+      var row = <HTMLTableRowElement>logsTable.insertRow();
+      row.classList.add(cssClass);
+
+      var idCell = <HTMLTableCellElement>row.insertCell();
+      idCell.innerText = cursor.key;
+
+      var createDateCell = <HTMLTableCellElement>row.insertCell();
+      createDateCell.innerText = cursor.value.CreateDate;
+
+      var contentCell = <HTMLTableCellElement>row.insertCell();
+      contentCell.innerText = cursor.value.Content;
+
+      console.log(cursor.key, cursor.value);
+      cursor.continue();
+    }
+  };
+}
+
+function log(log: Log) {
+  var transaction = db.transaction("logs", "readwrite");
+  var request = transaction.objectStore("logs").add(log);
+  request.onsuccess = (event) => {
+    console.log("success log");
+  };
+  request.onerror = (event) => {
+    console.log(event.error);
+  };
+}
 
 window.addEventListener("load", (e) => {
+  logsTable = <HTMLTableElement>document.getElementById("logsTable");
+
   var filter1CB = <HTMLInputElement>document.getElementById("filter1CB");
   var filter2CB = <HTMLInputElement>document.getElementById("filter2CB");
   filter1CB.addEventListener("change", (e) => {enableOrDisableFilter(e, 1);}, false);
@@ -36,17 +122,29 @@ window.addEventListener("load", (e) => {
       var img = new Image();
       img.src = URL.createObjectURL(file);
       img.onload = function() {
-        originalImage = img;
+        state.Image = img;
+        var widthRatio = state.Image.width / canvasWidth;
+        var heightRatio = state.Image.height / canvasHeight;
+        if(widthRatio > heightRatio) {
+          state.ImageWidth = state.Image.width / widthRatio;
+          state.ImageHeight = state.Image.height / widthRatio;
+        }
+        else {
+          state.ImageWidth = state.Image.width / heightRatio;
+          state.ImageHeight = state.Image.height / heightRatio;
+        }
+        state.ImageX = (canvasWidth - state.ImageWidth) / 2;
+        state.ImageY = (canvasHeight - state.ImageHeight) / 2;
         draw();
+
+        log(new Log(LogType.PICTURE_CHANGE, Date.now(), "picture changed: " + file.name));
       }
     }
     else {
       var reader = new FileReader();
       reader.onload = function(e) {
         var text = reader.result;
-        context.fillStyle = "red";
-        context.font = "30px Sans-Serif";
-        originalText = text;
+        state.Text = text;
         draw();
       }
       reader.readAsText(file);
@@ -56,8 +154,8 @@ window.addEventListener("load", (e) => {
 
 function enableOrDisableFilter(e: Event, which: number) {
   var cb = <HTMLInputElement>e.target;
-  if(which == 1) isFilter1Enabled = cb.checked;
-  if(which == 2) isFilter2Enabled = cb.checked;
+  if(which == 1) state.IsFilter1Enabled = cb.checked;
+  if(which == 2) state.IsFilter2Enabled= cb.checked;
   draw();
 }
 
@@ -65,9 +163,9 @@ var solarizeLevel = 100;
 
 function draw() {
   context.clearRect(0, 0, canvasWidth, canvasHeight);
-  if(originalImage) {
-    context.drawImage(originalImage, 0, 0);
-    if(isFilter1Enabled) {
+  if(state.Image) {
+    context.drawImage(state.Image, state.ImageX, state.ImageY, state.ImageWidth, state.ImageHeight);
+    if(state.IsFilter1Enabled) {
       var imageData = context.getImageData(0, 0, canvasWidth, canvasHeight);
       var data = imageData.data;
       for (var i = 0; i <= data.length - 4; i += 4) {
@@ -77,21 +175,44 @@ function draw() {
         }
       context.putImageData(imageData, 0, 0);
     }
-    if(isFilter2Enabled) {
+    if(state.IsFilter2Enabled) {
       var imageData = context.getImageData(0, 0, canvasWidth, canvasHeight);
       var data = imageData.data;
       for (var i = 0; i <= data.length - 4; i += 4) {
-            data[i] = 0;
-            data[i + 1] = solarizeColor(data[i + 1], solarizeLevel)
-            data[i + 2] = solarizeColor(data[i + 2], solarizeLevel);
+            data[i] = 255 - data[ i ];
+            data[i + 1] = 255 - data[i + 1];
+            data[i + 2] = 255 - data[i + 2];
         }
       context.putImageData(imageData, 0, 0);
     }
   }
-  if(originalText)
-    context.fillText(originalText, 0, 100);
+  if(state.Text) {
+    context.fillStyle = "red";
+    context.font = "13px Sans-Serif";
+    wrapText(context, state.Text, 0, canvasHeight / 2, canvasWidth, 20)
+  }
 }
 
 function solarizeColor(color, level) {
   return Math.min(color + level, 255);
+}
+
+function wrapText(context, text, x, y, maxWidth, lineHeight) {
+  var words = text.split(' ');
+  var line = '';
+
+  for(var n = 0; n < words.length; n++) {
+    var testLine = line + words[n] + ' ';
+    var metrics = context.measureText(testLine);
+    var testWidth = metrics.width;
+    if (testWidth > maxWidth && n > 0) {
+      context.fillText(line, x, y);
+      line = words[n] + ' ';
+      y += lineHeight;
+    }
+    else {
+      line = testLine;
+    }
+  }
+  context.fillText(line, x, y);
 }
