@@ -11,7 +11,7 @@ var State = (function () {
 var LogType;
 (function (LogType) {
     LogType[LogType["PICTURE_CHANGE"] = 0] = "PICTURE_CHANGE";
-    LogType[LogType["TEXT_CACHE"] = 1] = "TEXT_CACHE";
+    LogType[LogType["TEXT_CHANGE"] = 1] = "TEXT_CHANGE";
 })(LogType || (LogType = {}));
 var Log = (function () {
     function Log(Type, CreateDate, Content) {
@@ -34,7 +34,6 @@ request.onerror = function (event) {
     console.log("create indexeddb permission denied");
 };
 request.onsuccess = function (event) {
-    console.log("success");
     db = request.result;
     loadLogs();
 };
@@ -44,17 +43,9 @@ function loadLogs() {
     request.onsuccess = function (event) {
         var cursor = event.target["result"];
         if (cursor) {
-            var type = cursor.value.Type;
-            var cssClass = type === 0 /* PICTURE_CHANGE */ ? "pictureRow" : "textRow";
-            var row = logsTable.insertRow();
-            row.classList.add(cssClass);
-            var idCell = row.insertCell();
-            idCell.innerText = cursor.key;
-            var createDateCell = row.insertCell();
-            createDateCell.innerText = cursor.value.CreateDate;
-            var contentCell = row.insertCell();
-            contentCell.innerText = cursor.value.Content;
-            console.log(cursor.key, cursor.value);
+            var log = cursor.value;
+            log.ID = cursor.key;
+            appendLogToTable(log);
             cursor.continue();
         }
     };
@@ -63,11 +54,21 @@ function log(log) {
     var transaction = db.transaction("logs", "readwrite");
     var request = transaction.objectStore("logs").add(log);
     request.onsuccess = function (event) {
-        console.log("success log");
+        log.ID = event.target["result"];
+        appendLogToTable(log);
     };
-    request.onerror = function (event) {
-        console.log(event.error);
-    };
+}
+function appendLogToTable(log) {
+    var type = log.Type;
+    var cssClass = type === 0 /* PICTURE_CHANGE */ ? "pictureRow" : "textRow";
+    var row = logsTable.insertRow();
+    row.classList.add(cssClass);
+    var idCell = row.insertCell();
+    idCell.innerText = log.ID.toString();
+    var createDateCell = row.insertCell();
+    createDateCell.innerText = new Date(log.CreateDate).toLocaleString();
+    var contentCell = row.insertCell();
+    contentCell.innerText = log.Content;
 }
 window.addEventListener("load", function (e) {
     logsTable = document.getElementById("logsTable");
@@ -124,6 +125,7 @@ window.addEventListener("load", function (e) {
                 var text = reader.result;
                 state.Text = text;
                 draw();
+                log(new Log(1 /* TEXT_CHANGE */, Date.now(), "text changed: " + file.name));
             };
             reader.readAsText(file);
         }

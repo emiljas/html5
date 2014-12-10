@@ -18,10 +18,12 @@ class State {
 
 enum LogType {
   PICTURE_CHANGE,
-  TEXT_CACHE
+  TEXT_CHANGE
 }
 
 class Log {
+  public ID: number;
+
   constructor (
     public Type: LogType,
     public CreateDate: number,
@@ -47,7 +49,6 @@ request.onerror = (event) => {
 };
 
 request.onsuccess = (event) => {
-  console.log("success");
   db = request.result;
   loadLogs();
 };
@@ -58,22 +59,9 @@ function loadLogs() {
   request.onsuccess = (event) => {
     var cursor = <IDBCursorWithValue>event.target["result"];
     if(cursor) {
-      var type = <LogType>cursor.value.Type;
-      var cssClass = type === LogType.PICTURE_CHANGE ? "pictureRow" : "textRow";
-
-      var row = <HTMLTableRowElement>logsTable.insertRow();
-      row.classList.add(cssClass);
-
-      var idCell = <HTMLTableCellElement>row.insertCell();
-      idCell.innerText = cursor.key;
-
-      var createDateCell = <HTMLTableCellElement>row.insertCell();
-      createDateCell.innerText = cursor.value.CreateDate;
-
-      var contentCell = <HTMLTableCellElement>row.insertCell();
-      contentCell.innerText = cursor.value.Content;
-
-      console.log(cursor.key, cursor.value);
+      var log = <Log>cursor.value;
+      log.ID = cursor.key;
+      appendLogToTable(log);
       cursor.continue();
     }
   };
@@ -83,11 +71,26 @@ function log(log: Log) {
   var transaction = db.transaction("logs", "readwrite");
   var request = transaction.objectStore("logs").add(log);
   request.onsuccess = (event) => {
-    console.log("success log");
+    log.ID = event.target["result"];
+    appendLogToTable(log);
   };
-  request.onerror = (event) => {
-    console.log(event.error);
-  };
+}
+
+function appendLogToTable(log: Log) {
+  var type = <LogType>log.Type;
+  var cssClass = type === LogType.PICTURE_CHANGE ? "pictureRow" : "textRow";
+
+  var row = <HTMLTableRowElement>logsTable.insertRow();
+  row.classList.add(cssClass);
+
+  var idCell = <HTMLTableCellElement>row.insertCell();
+  idCell.innerText = log.ID.toString();
+
+  var createDateCell = <HTMLTableCellElement>row.insertCell();
+  createDateCell.innerText = new Date(log.CreateDate).toLocaleString();
+
+  var contentCell = <HTMLTableCellElement>row.insertCell();
+  contentCell.innerText = log.Content;
 }
 
 window.addEventListener("load", (e) => {
@@ -146,6 +149,7 @@ window.addEventListener("load", (e) => {
         var text = reader.result;
         state.Text = text;
         draw();
+        log(new Log(LogType.TEXT_CHANGE, Date.now(), "text changed: " + file.name));
       }
       reader.readAsText(file);
     }
