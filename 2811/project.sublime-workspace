@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"IMAGE",
+				"IMAGE_X_OFFSET"
+			],
+			[
 				"sol",
 				"solarityLevelRangeCtrl"
 			],
@@ -359,15 +363,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 880,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "server.ts",
-			"settings":
-			{
-				"buffer_size": 1502,
+				"buffer_size": 883,
 				"line_ending": "Unix"
 			}
 		},
@@ -375,7 +371,7 @@
 			"file": "script.ts",
 			"settings":
 			{
-				"buffer_size": 887,
+				"buffer_size": 950,
 				"line_ending": "Unix"
 			}
 		},
@@ -384,14 +380,6 @@
 			"settings":
 			{
 				"buffer_size": 604,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/emil/Pulpit/info.txt",
-			"settings":
-			{
-				"buffer_size": 405,
 				"line_ending": "Unix"
 			}
 		}
@@ -483,9 +471,10 @@
 	],
 	"file_history":
 	[
+		"/home/emil/Pulpit/html5/2811/server.ts",
+		"/home/emil/Pulpit/info.txt",
 		"/home/emil/Pulpit/html5/2811/typings/node/node.d.ts",
 		"/home/emil/Pulpit/html5/2811/typings/tsd.d.ts",
-		"/home/emil/Pulpit/html5/2811/server.ts",
 		"/home/emil/Pulpit/html5/2811/server.js",
 		"/home/emil/Pulpit/html5/2811/watchAndBuild.sh",
 		"/home/emil/Pulpit/html5/2811/worker.ts",
@@ -635,7 +624,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -644,20 +633,22 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 880,
+						"buffer_size": 883,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								513,
-								513
+								510,
+								510
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
 							"vintage":
 							{
 								"_vintageous_glue_until_normal_mode": true,
@@ -680,31 +671,31 @@
 									null
 								],
 								"sequence": "",
-								"xpos": 66
+								"xpos": 43
 							}
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "server.ts",
+					"file": "script.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1502,
+						"buffer_size": 950,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1397,
-								1397
+								947,
+								947
 							]
 						],
 						"settings":
@@ -714,18 +705,17 @@
 							[
 								"ts"
 							],
-							"spell_check": false,
 							"syntax": "Packages/T3S/theme/Typescript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true,
 							"vintage":
 							{
-								"_vintageous_glue_until_normal_mode": false,
+								"_vintageous_glue_until_normal_mode": true,
 								"_vintageous_non_interactive": false,
 								"_vintageous_processing_notation": false,
 								"action": null,
 								"action_count": "",
-								"mode": "mode_normal",
+								"mode": "mode_insert",
 								"motion": null,
 								"motion_count": "",
 								"must_capture_register_name": false,
@@ -734,9 +724,40 @@
 								"register": "\"",
 								"repeat_data":
 								[
-									"vi",
-									"x",
-									"mode_normal",
+									"native",
+									[
+										"sequence",
+										{
+											"commands":
+											[
+												[
+													"insert",
+													{
+														"characters": "var"
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": " i"
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": " ="
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": " "
+													}
+												]
+											]
+										}
+									],
+									"mode_insert",
 									null
 								],
 								"sequence": "",
@@ -744,73 +765,14 @@
 							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "script.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 887,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								372,
-								372
-							]
-						],
-						"settings":
-						{
-							"auto_complete": true,
-							"extensions":
-							[
-								"ts"
-							],
-							"syntax": "Packages/T3S/theme/Typescript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"vintage":
-							{
-								"_vintageous_glue_until_normal_mode": false,
-								"_vintageous_non_interactive": false,
-								"_vintageous_processing_notation": false,
-								"action": null,
-								"action_count": "",
-								"mode": "mode_normal",
-								"motion": null,
-								"motion_count": "",
-								"must_capture_register_name": false,
-								"normal_insert_count": "1",
-								"partial_sequence": "",
-								"register": "\"",
-								"repeat_data":
-								[
-									"vi",
-									"dd",
-									"mode_internal_normal",
-									null
-								],
-								"sequence": "",
-								"xpos": 0
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "worker.ts",
 					"semi_transient": false,
 					"settings":
@@ -822,13 +784,20 @@
 						"selection":
 						[
 							[
-								363,
-								363
+								604,
+								604
 							]
 						],
 						"settings":
 						{
+							"auto_complete": true,
+							"extensions":
+							[
+								"ts"
+							],
 							"syntax": "Packages/T3S/theme/Typescript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
 							"vintage":
 							{
 								"_vintageous_glue_until_normal_mode": false,
@@ -894,50 +863,6 @@
 									null
 								],
 								"sequence": "",
-								"xpos": 39
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/home/emil/Pulpit/info.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 405,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"vintage":
-							{
-								"_vintageous_glue_until_normal_mode": false,
-								"_vintageous_non_interactive": false,
-								"_vintageous_processing_notation": false,
-								"action": null,
-								"action_count": "",
-								"mode": "mode_normal",
-								"motion": null,
-								"motion_count": "",
-								"must_capture_register_name": false,
-								"partial_sequence": "",
-								"register": "\"",
-								"sequence": "",
 								"xpos": 0
 							}
 						},
@@ -945,7 +870,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

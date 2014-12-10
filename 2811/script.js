@@ -11,15 +11,14 @@ solarityLevelRangeCtrl.onchange = function (event) {
 worker.onmessage = function (e) {
     context.putImageData(e.data, 0, 0);
 };
-var IMAGE_Y_OFFSET = -600;
+var IMAGE_Y_OFFSET = -1900;
+var IMAGE_X_OFFSET = -1000;
 canvas = document.getElementById("canvas");
 context = canvas.getContext("2d");
 var image = new Image();
 image.src = "download.jpg";
 image.onload = function () {
-    canvas.width = image.width;
-    canvas.height = image.height + IMAGE_Y_OFFSET;
-    context.drawImage(image, 0, IMAGE_Y_OFFSET, image.width, image.height);
+    context.drawImage(image, IMAGE_X_OFFSET, IMAGE_Y_OFFSET, image.width, image.height);
     imageData = context.getImageData(0, 0, canvas.width, canvas.height);
     worker.postMessage({ imageData: imageData });
 };
