@@ -5,7 +5,6 @@ var State = (function () {
     function State() {
         this.IsFilter1Enabled = false;
         this.IsFilter2Enabled = false;
-        this.LogDisplayMode = 1 /* ALL */;
     }
     return State;
 })();
@@ -24,13 +23,12 @@ var Log = (function () {
 })();
 var state = new State();
 var db;
-var request = window.indexedDB.open("db", 3);
+var request = window.indexedDB.open("db", 1);
 request.onupgradeneeded = function (event) {
     var db = request.result;
-    var logsObjectStore = db.createObjectStore("logs", {
+    db.createObjectStore("logs", {
         autoIncrement: true
     });
-    logsObjectStore.createIndex("Type", "Type", { unique: false });
 };
 request.onerror = function (event) {
     console.log("create indexeddb permission denied");
@@ -40,10 +38,16 @@ request.onsuccess = function (event) {
     loadLogs();
 };
 function loadLogs() {
-    var logsObjectStore = db.transaction("logs", "readwrite").objectStore("logs");
-    var request = logsObjectStore.index("Type").get(state.LogDisplayMode);
+    var transaction = db.transaction("logs", "readonly");
+    var request = transaction.objectStore("logs").openCursor();
     request.onsuccess = function (event) {
-        console.log(event.target["result"]);
+        var cursor = event.target["result"];
+        if (cursor) {
+            var log = cursor.value;
+            log.ID = cursor.key;
+            appendLogToTable(log);
+            cursor.continue();
+        }
     };
 }
 function log(log) {
@@ -66,20 +70,7 @@ function appendLogToTable(log) {
     var contentCell = row.insertCell();
     contentCell.innerText = log.Content;
 }
-function refreshLogTable() {
-    logsTable.innerHTML = "";
-    loadLogs();
-}
 window.addEventListener("load", function (e) {
-    var logDisplayModeRadioBtns = document.querySelectorAll("input[name='logDisplayMode']");
-    for (var i = logDisplayModeRadioBtns.length - 1; i >= 0; i--) {
-        logDisplayModeRadioBtns[i].addEventListener("click", function (event) {
-            var radioBtn = event.target;
-            var mode = parseInt(radioBtn.value);
-            state.LogDisplayMode = mode;
-            refreshLogTable();
-        }, false);
-    }
     logsTable = document.getElementById("logsTable");
     var filter1CB = document.getElementById("filter1CB");
     var filter2CB = document.getElementById("filter2CB");
@@ -201,9 +192,3 @@ function wrapText(context, text, x, y, maxWidth, lineHeight) {
     }
     context.fillText(line, x, y);
 }
-var LogDisplayMode;
-(function (LogDisplayMode) {
-    LogDisplayMode[LogDisplayMode["ALL"] = 1] = "ALL";
-    LogDisplayMode[LogDisplayMode["TEXT"] = 2] = "TEXT";
-    LogDisplayMode[LogDisplayMode["IMAGES"] = 3] = "IMAGES";
-})(LogDisplayMode || (LogDisplayMode = {}));

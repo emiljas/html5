@@ -14,8 +14,6 @@ class State {
 
   public IsFilter1Enabled = false;
   public IsFilter2Enabled = false;
-
-  public LogDisplayMode = LogDisplayMode.ALL;
 }
 
 enum LogType {
@@ -37,14 +35,13 @@ var state = new State();
 
 var db: IDBDatabase;
 
-var request = window.indexedDB.open("db", 3);
+var request = window.indexedDB.open("db", 1);
 
 request.onupgradeneeded = (event) => {
   var db = <IDBDatabase>request.result;
-  var logsObjectStore = db.createObjectStore("logs", {
+  db.createObjectStore("logs", {
     autoIncrement: true
   });
-  logsObjectStore.createIndex("Type", "Type", { unique: false });
 };
 
 request.onerror = (event) => {
@@ -53,23 +50,20 @@ request.onerror = (event) => {
 
 request.onsuccess = (event) => {
   db = request.result;
-
   loadLogs();
 };
 
 function loadLogs() {
-  var logsObjectStore = db.transaction("logs", "readwrite").objectStore("logs");
-  var request = logsObjectStore.index("Type").get(state.LogDisplayMode);
-
+  var transaction = db.transaction("logs", "readonly");
+  var request = transaction.objectStore("logs").openCursor();
   request.onsuccess = (event) => {
-    console.log(event.target["result"]);
-    // var cursor = <IDBCursorWithValue>event.target["result"];
-    // if(cursor) {
-    //   var log = <Log>cursor.value;
-    //   log.ID = cursor.key;
-    //   appendLogToTable(log);
-    //   cursor.continue();
-    // }
+    var cursor = <IDBCursorWithValue>event.target["result"];
+    if(cursor) {
+      var log = <Log>cursor.value;
+      log.ID = cursor.key;
+      appendLogToTable(log);
+      cursor.continue();
+    }
   };
 }
 
@@ -99,23 +93,7 @@ function appendLogToTable(log: Log) {
   contentCell.innerText = log.Content;
 }
 
-function refreshLogTable() {
-  logsTable.innerHTML = "";
-  loadLogs();
-}
-
 window.addEventListener("load", (e) => {
-  var logDisplayModeRadioBtns = document.querySelectorAll("input[name='logDisplayMode']");
-  for (var i = logDisplayModeRadioBtns.length - 1; i >= 0; i--) {
-    logDisplayModeRadioBtns[i].addEventListener("click", (event) => {
-      var radioBtn = <HTMLInputElement>event.target;
-      var mode = <LogDisplayMode>parseInt(radioBtn.value);
-      state.LogDisplayMode = mode;
-
-      refreshLogTable();
-    }, false);
-  }
-
   logsTable = <HTMLTableElement>document.getElementById("logsTable");
 
   var filter1CB = <HTMLInputElement>document.getElementById("filter1CB");
@@ -242,16 +220,3 @@ function wrapText(context, text, x, y, maxWidth, lineHeight) {
   }
   context.fillText(line, x, y);
 }
-
-enum LogDisplayMode {
-  ALL = 1,
-  TEXT = 2,
-  IMAGES = 3
-}
-
-
-
-// function getLogDisplayMode(): LogDisplayMode {
-//   var selectedRadioBtn = <HTMLInputElement>document.querySelector('input[name="logDisplayMode"]:checked');
-//   return <LogDisplayMode>parseInt(selectedRadioBtn.value);
-// }
