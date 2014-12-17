@@ -22,26 +22,116 @@ function makeRandomNumber(): string {
   return str;
 }
 
-window.addEventListener("load", (event) => {
-  var html = "<table>";
-  html += "<thead>";
-  html += "<th>name</th>";
-  html += "<th>surname</th>";
-  html += "<th>sex</th>";
-  html += "<th>age</th>";
-  html += "</thead>";
-  html += "<tbody>"
-  for(var rowI = 0; rowI < 20; rowI++) {
-    html += "<tr>";
-    for(var columnI = 0; columnI < 4; columnI++) {
-      if(columnI == 3)
-        html += "<td>" + makeRandomNumber() + "</td>";
-      else
-        html += "<td>" + makeRandomString() + "</td>";
-    }
-    html += "</tr>";
+function removeElement(element: HTMLElement) {
+  element.parentElement.removeChild(element);
+}
+
+function removeToInsertLater (element: HTMLElement): () => void {
+    var parentNode = element.parentNode;
+    var nextSibling = element.nextSibling;
+    parentNode.removeChild(element);
+    return () => {
+        if (nextSibling) {
+            parentNode.insertBefore(element, nextSibling);
+        } else {
+            parentNode.appendChild(element);
+        }
+    };
+};
+
+function forEachNode(nodes: NodeList, callback: (HTMLElement) => void) {
+  for(var i = 0; i < nodes.length; i++)
+    callback(nodes[i]);
+}
+
+class RandomRecordCollection {
+  private records: RandomRecord[];
+
+  private lastSortIndex: number;
+  private isDesc: boolean;
+
+  constructor(private table: HTMLTableElement) {
+    this.records = new Array<RandomRecord>();
   }
-  html += "</tbody>";
-  html += "</table>";
-  body.innerHTML = html;
-}, false);
+
+  public push(record: RandomRecord) {
+    this.records.push(record);
+  }
+
+  public sortByColumnIndex(index: number) {
+    if(index === this.lastSortIndex)
+    this.isDesc = true;
+
+    if(index === 0) {
+      this.records.sort((a, b) => {
+        return a.Name.localeCompare(b.Name);
+      });
+    }
+
+    this.lastSortIndex = index;
+  }
+
+  public refresh() {
+    this.records.forEach((record) => {
+      removeElement(record.Row);
+      this.table.appendChild(record.Row);
+    });
+  }
+}
+
+class RandomRecord {
+  public Name: string;
+  public Surname: string;
+  public Sex: string;
+  public Age: string;
+
+  constructor(public Row: HTMLTableRowElement) {
+    this.Name = makeRandomString();
+    this.Surname = makeRandomString();
+    this.Sex = makeRandomString();
+    this.Age = makeRandomNumber();
+  }
+
+  public render() {
+    this.renderCell(0, this.Name);
+    this.renderCell(1, this.Surname);
+    this.renderCell(2, this.Sex);
+    this.renderCell(3, this.Age);
+  }
+
+  private renderCell(cellIndex: number, text: string) {
+    var column = <HTMLTableCellElement>row.insertCell(cellIndex);
+    column.innerText = text;
+  }
+}
+
+var randomDataTable = <HTMLTableElement>document.getElementById("randomData");
+var records = new RandomRecordCollection(randomDataTable);
+var showRandomDataTable = removeToInsertLater(randomDataTable);
+
+for(var rowIndex = 1; rowIndex < 20; rowIndex++) {
+  var row = <HTMLTableRowElement>randomDataTable.insertRow(rowIndex);
+  var record = new RandomRecord(row);
+  record.render();
+  records.push(record);
+}
+
+forEachNode(randomDataTable.querySelectorAll("th"), (headerCell: HTMLTableHeaderCellElement) => {
+  headerCell.addEventListener("click", (event) => {
+    records.sortByColumnIndex(headerCell.cellIndex);
+    records.refresh();
+  }, false);
+});
+
+forEachNode(randomDataTable.querySelectorAll("td"), (cell: HTMLTableCellElement) => {
+  cell.addEventListener("click", (event) => {
+    var row = <HTMLTableRowElement>cell.parentElement;
+    if(row.classList.contains("selected"))
+      row.classList.remove("selected");
+    else
+      row.classList.add("selected");
+  }, false);
+});
+
+randomDataTable.classList.remove("hide");
+showRandomDataTable();

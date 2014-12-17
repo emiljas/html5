@@ -4,10 +4,24 @@
   <meta charset="UTF-8">
   <title></title>
   <style>
-  th, td {border: 1px solid black;}
+  th, td {border: 1px solid black; cursor: pointer; }
+  .hide { display: none; }
+  tr.selected td { background-color: rgba(0, 0, 100, 1); color: white; font-weight: bold }
   </style>
 </head>
 <body>
-<script src="script.js"></script>
+
+  <table id="randomData" class="hide">
+    <thead>
+      <th>name</th>
+      <th>surname</th>
+      <th>sex</th>
+      <th>age</th>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <script src="script.js"></script>
 </body>
 </html>
