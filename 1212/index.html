@@ -17,11 +17,18 @@
     <label><input type="checkbox" id="filter1CB" />filter1</label>
     <label><input type="checkbox" id="filter2CB" />filter2</label>
   </div>
+  <div>
+    <label><input type="radio" name="logType" value="-1" checked />all</label>
+    <label><input type="radio" name="logType" value="0" />image</label>
+    <label><input type="radio" name="logType" value="1" />text</label>
+  </div>
   <table id="logsTable">
     <thead>
-      <th>id</th>
-      <th>create date</th>
-      <th>content</th>
+      <tr>
+        <th>id</th>
+        <th>create date</th>
+        <th>content</th>
+      </tr>
     </thead>
     <tbody></tbody>
   </table>

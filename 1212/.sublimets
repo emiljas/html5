@@ -1,5 +1,5 @@
 {
-    "root": "script.ts", 
+    "root": "root.ts", 
     "settings": {
         "build_on_save": false, 
         "build_parameters": {

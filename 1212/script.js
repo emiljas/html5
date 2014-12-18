@@ -1,6 +1,26 @@
+var FilterWorkerMessage = (function () {
+    function FilterWorkerMessage(ImageData, IsFilter1Enabled, IsFilter2Enabled) {
+        this.ImageData = ImageData;
+        this.IsFilter1Enabled = IsFilter1Enabled;
+        this.IsFilter2Enabled = IsFilter2Enabled;
+    }
+    return FilterWorkerMessage;
+})();
+var filterWorker = new Worker("/filterWorker.js");
+filterWorker.onmessage = function (event) {
+    var message = event.data;
+    context.putImageData(message.ImageData, 0, 0);
+    drawText();
+};
+function forEachNode(nodes, callback) {
+    for (var i = 0; i < nodes.length; i++) {
+        callback(nodes[i]);
+    }
+}
 var canvas, context;
 var canvasWidth, canvasHeight;
 var logsTable;
+var logsTableBody;
 var State = (function () {
     function State() {
         this.IsFilter1Enabled = false;
@@ -10,6 +30,7 @@ var State = (function () {
 })();
 var LogType;
 (function (LogType) {
+    LogType[LogType["ALL"] = -1] = "ALL";
     LogType[LogType["PICTURE_CHANGE"] = 0] = "PICTURE_CHANGE";
     LogType[LogType["TEXT_CHANGE"] = 1] = "TEXT_CHANGE";
 })(LogType || (LogType = {}));
@@ -23,12 +44,11 @@ var Log = (function () {
 })();
 var state = new State();
 var db;
-var request = window.indexedDB.open("db", 1);
+var request = window.indexedDB.open("db", 2);
 request.onupgradeneeded = function (event) {
     var db = request.result;
-    db.createObjectStore("logs", {
-        autoIncrement: true
-    });
+    var transaction = event.currentTarget["transaction"];
+    transaction.objectStore("logs").createIndex("TypeIndex", "Type");
 };
 request.onerror = function (event) {
     console.log("create indexeddb permission denied");
@@ -37,6 +57,7 @@ request.onsuccess = function (event) {
     db = request.result;
     loadLogs();
 };
+var selectedLogType = -1 /* ALL */;
 function loadLogs() {
     var transaction = db.transaction("logs", "readonly");
     var request = transaction.objectStore("logs").openCursor();
@@ -50,6 +71,19 @@ function loadLogs() {
         }
     };
 }
+function filterLogs(type) {
+    var transaction = db.transaction("logs", "readonly");
+    var request = transaction.objectStore("logs").index("TypeIndex").openCursor(IDBKeyRange.only(type));
+    request.onsuccess = function (event) {
+        var cursor = event.target["result"];
+        if (cursor) {
+            var log = cursor.value;
+            log.ID = cursor.primaryKey;
+            appendLogToTable(log);
+            cursor.continue();
+        }
+    };
+}
 function log(log) {
     var transaction = db.transaction("logs", "readwrite");
     var request = transaction.objectStore("logs").add(log);
@@ -58,20 +92,28 @@ function log(log) {
         appendLogToTable(log);
     };
 }
+function emptyLogsTable() {
+    forEachNode(logsTable.querySelectorAll("tbody tr"), function (row) {
+        row.parentNode.removeChild(row);
+    });
+}
 function appendLogToTable(log) {
-    var type = log.Type;
-    var cssClass = type === 0 /* PICTURE_CHANGE */ ? "pictureRow" : "textRow";
-    var row = logsTable.insertRow();
-    row.classList.add(cssClass);
-    var idCell = row.insertCell();
-    idCell.innerText = log.ID.toString();
-    var createDateCell = row.insertCell();
-    createDateCell.innerText = new Date(log.CreateDate).toLocaleString();
-    var contentCell = row.insertCell();
-    contentCell.innerText = log.Content;
+    if (selectedLogType === -1 /* ALL */ || log.Type === selectedLogType) {
+        var type = log.Type;
+        var cssClass = type === 0 /* PICTURE_CHANGE */ ? "pictureRow" : "textRow";
+        var row = logsTableBody.insertRow();
+        row.classList.add(cssClass);
+        var idCell = row.insertCell();
+        idCell.innerText = log.ID.toString();
+        var createDateCell = row.insertCell();
+        createDateCell.innerText = new Date(log.CreateDate).toLocaleString();
+        var contentCell = row.insertCell();
+        contentCell.innerText = log.Content;
+    }
 }
 window.addEventListener("load", function (e) {
     logsTable = document.getElementById("logsTable");
+    logsTableBody = logsTable.querySelector("tbody");
     var filter1CB = document.getElementById("filter1CB");
     var filter2CB = document.getElementById("filter2CB");
     filter1CB.addEventListener("change", function (e) {
@@ -139,40 +181,34 @@ function enableOrDisableFilter(e, which) {
         state.IsFilter2Enabled = cb.checked;
     draw();
 }
-var solarizeLevel = 100;
 function draw() {
     context.clearRect(0, 0, canvasWidth, canvasHeight);
     if (state.Image) {
         context.drawImage(state.Image, state.ImageX, state.ImageY, state.ImageWidth, state.ImageHeight);
-        if (state.IsFilter1Enabled) {
-            var imageData = context.getImageData(0, 0, canvasWidth, canvasHeight);
-            var data = imageData.data;
-            for (var i = 0; i <= data.length - 4; i += 4) {
-                data[i] = solarizeColor(data[i], solarizeLevel);
-                data[i + 1] = solarizeColor(data[i + 1], solarizeLevel);
-                data[i + 2] = solarizeColor(data[i + 2], solarizeLevel);
-            }
-            context.putImageData(imageData, 0, 0);
-        }
-        if (state.IsFilter2Enabled) {
-            var imageData = context.getImageData(0, 0, canvasWidth, canvasHeight);
-            var data = imageData.data;
-            for (var i = 0; i <= data.length - 4; i += 4) {
-                data[i] = 255 - data[i];
-                data[i + 1] = 255 - data[i + 1];
-                data[i + 2] = 255 - data[i + 2];
-            }
-            context.putImageData(imageData, 0, 0);
-        }
+        var imageData = context.getImageData(0, 0, canvasWidth, canvasHeight);
+        filterWorker.postMessage(new FilterWorkerMessage(imageData, state.IsFilter1Enabled, state.IsFilter2Enabled));
     }
+    else
+        drawText();
+}
+forEachNode(document.querySelectorAll("input[name='logType']"), function (node) {
+    node.addEventListener("click", function (event) {
+        var radio = node;
+        var logType = parseInt(radio.value);
+        selectedLogType = logType;
+        emptyLogsTable();
+        if (logType == -1 /* ALL */)
+            loadLogs();
+        else
+            filterLogs(logType);
+    }, false);
+});
+function drawText() {
     if (state.Text) {
         context.fillStyle = "red";
         context.font = "13px Sans-Serif";
         wrapText(context, state.Text, 0, canvasHeight / 2, canvasWidth, 20);
     }
-}
-function solarizeColor(color, level) {
-    return Math.min(color + level, 255);
 }
 function wrapText(context, text, x, y, maxWidth, lineHeight) {
     var words = text.split(' ');
