@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    th, td { border: 1px solid red; }
+    .pictureRow { background-color: rgba(255, 0, 0, 0.5); }
+    .textRow { background-color: rgba(0, 255, 0, 0.5); }
+  </style>
+</head>
+<body>
+  <div>
+    <canvas id="canvas" style="border: 1px solid red;" width="300" height="300" draggable="true"></canvas>
+  </div>
+  <div>
+    <label><input type="checkbox" id="filter1CB" />filter1</label>
+    <label><input type="checkbox" id="filter2CB" />filter2</label>
+  </div>
+  <div>
+    <label><input type="radio" name="logType" value="-1" checked />all</label>
+    <label><input type="radio" name="logType" value="0" />image</label>
+    <label><input type="radio" name="logType" value="1" />text</label>
+  </div>
+  <table id="logsTable">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>create date</th>
+        <th>content</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <script src="scripts/script.js"></script>
+</body>
+</html>
