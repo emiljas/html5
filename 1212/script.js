@@ -44,7 +44,7 @@ var Log = (function () {
 })();
 var state = new State();
 var db;
-var request = window.indexedDB.open("db", 2);
+var request = window.indexedDB.open("db", 4);
 request.onupgradeneeded = function (event) {
     var db = request.result;
     var transaction = event.currentTarget["transaction"];

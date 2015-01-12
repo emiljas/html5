@@ -53,7 +53,7 @@ var state = new State();
 
 var db: IDBDatabase;
 
-var request = window.indexedDB.open("db", 2);
+var request = window.indexedDB.open("db", 4);
 
 request.onupgradeneeded = (event) => {
   var db = <IDBDatabase>request.result;

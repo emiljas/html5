@@ -1,111 +1,41 @@
 var body = document.body;
-function makeRandomString() {
-    var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    for (var i = 0; i < 5; i++)
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-    return text;
-}
-function randomDigit() {
-    return Math.floor(Math.random() * 9);
-}
-function makeRandomNumber() {
-    var str = "";
-    str += randomDigit().toString();
-    str += randomDigit().toString();
-    return str;
-}
-function removeElement(element) {
-    element.parentElement.removeChild(element);
-}
-function removeToInsertLater(element) {
-    var parentNode = element.parentNode;
-    var nextSibling = element.nextSibling;
-    parentNode.removeChild(element);
-    return function () {
-        if (nextSibling) {
-            parentNode.insertBefore(element, nextSibling);
-        }
-        else {
-            parentNode.appendChild(element);
-        }
-    };
-}
-;
-function forEachNode(nodes, callback) {
-    for (var i = 0; i < nodes.length; i++)
-        callback(nodes[i]);
-}
-var RandomRecordCollection = (function () {
-    function RandomRecordCollection(table) {
-        this.table = table;
-        this.records = new Array();
+var btn = document.createElement("button");
+btn.innerText = "click";
+var width = window.innerWidth, height = window.innerHeight;
+body.appendChild(btn);
+btn.style.marginLeft = (width / 2 - btn.offsetWidth / 2).toString() + "px";
+btn.style.marginTop = (height / 2 - btn.offsetHeight / 2).toString() + "px";
+btn.addEventListener("click", function (event) {
+    window.alert("klik");
+}, false);
+var moveCount = 0;
+btn.addEventListener("mousedown", function (event) {
+    if (moveCount === 4) {
+        console.log("już się nie porusza po kliknięciu");
     }
-    RandomRecordCollection.prototype.push = function (record) {
-        this.records.push(record);
-    };
-    RandomRecordCollection.prototype.sortByColumnIndex = function (index) {
-        if (index === this.lastSortIndex)
-            this.isDesc = true;
-        if (index === 0) {
-            this.records.sort(function (a, b) {
-                return a.Name.localeCompare(b.Name);
-            });
-        }
-        this.lastSortIndex = index;
-    };
-    RandomRecordCollection.prototype.refresh = function () {
-        var _this = this;
-        this.records.forEach(function (record) {
-            removeElement(record.Row);
-            _this.table.appendChild(record.Row);
-        });
-    };
-    return RandomRecordCollection;
-})();
-var RandomRecord = (function () {
-    function RandomRecord(Row) {
-        this.Row = Row;
-        this.Name = makeRandomString();
-        this.Surname = makeRandomString();
-        this.Sex = makeRandomString();
-        this.Age = makeRandomNumber();
+    else {
+        var r = Math.floor(Math.random() * 4);
+        if (r === 0)
+            btn.style.marginLeft = (parseInt(btn.style.marginLeft) - 50).toString() + "px";
+        if (r === 1)
+            btn.style.marginLeft = (parseInt(btn.style.marginLeft) + 50).toString() + "px";
+        if (r === 2)
+            btn.style.marginTop = (parseInt(btn.style.marginTop) - 50).toString() + "px";
+        if (r === 3)
+            btn.style.marginTop = (parseInt(btn.style.marginTop) + 50).toString() + "px";
+        moveCount++;
     }
-    RandomRecord.prototype.render = function () {
-        this.renderCell(0, this.Name);
-        this.renderCell(1, this.Surname);
-        this.renderCell(2, this.Sex);
-        this.renderCell(3, this.Age);
-    };
-    RandomRecord.prototype.renderCell = function (cellIndex, text) {
-        var column = row.insertCell(cellIndex);
-        column.innerText = text;
-    };
-    return RandomRecord;
-})();
-var randomDataTable = document.getElementById("randomData");
-var records = new RandomRecordCollection(randomDataTable);
-var showRandomDataTable = removeToInsertLater(randomDataTable);
-for (var rowIndex = 1; rowIndex < 20; rowIndex++) {
-    var row = randomDataTable.insertRow(rowIndex);
-    var record = new RandomRecord(row);
-    record.render();
-    records.push(record);
-}
-forEachNode(randomDataTable.querySelectorAll("th"), function (headerCell) {
-    headerCell.addEventListener("click", function (event) {
-        records.sortByColumnIndex(headerCell.cellIndex);
-        records.refresh();
-    }, false);
-});
-forEachNode(randomDataTable.querySelectorAll("td"), function (cell) {
-    cell.addEventListener("click", function (event) {
-        var row = cell.parentElement;
-        if (row.classList.contains("selected"))
-            row.classList.remove("selected");
-        else
-            row.classList.add("selected");
-    }, false);
-});
-randomDataTable.classList.remove("hide");
-showRandomDataTable();
+}, false);
+var color = [
+    "rgba(255, 0, 0, 1)",
+    "rgba(255, 255, 0, 1)",
+    "rgba(5, 0, 255, 1)",
+    "rgba(5, 255, 255, 1)",
+    "rgba(25, 0, 100, 1)",
+];
+btn.addEventListener("mouseover", function (event) {
+    if (moveCount === 4) {
+        var r = Math.floor(Math.random() * 5);
+        btn.style.backgroundColor = color[r];
+    }
+}, false);
