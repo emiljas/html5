@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>WebSocket Test</title>
+  </head>
+<body>
+  <canvas id="canvas" width="400" height="400" style="border: 1px solid black;"></canvas>
+  <div id="output"></div>
+  <form name="myform">
+  <div style="display: none;">
+     <p>
+        <textarea name="outputtext" rows="20" cols="50"></textarea>
+     </p>
+     <p>
+        <textarea name="inputtext" cols="50"></textarea>
+     </p>
+     <p>
+        <textarea name="url" cols="50"></textarea>
+     </p>
+  </div>
+     <p>
+        <input type="button" name=sendButton value="Send" onClick="sendText();">
+        <input type="button" name=clearButton value="Clear" onClick="clearText();">
+        <input type="button" name=disconnectButton value="Disconnect" onClick="doDisconnect();">
+        <input type="button" name=connectButton value="Connect" onClick="doConnect();">
+     </p>
+  </form>
+<script>
+  var canvas = document.querySelector("#canvas");
+  var context = canvas.getContext('2d');
+
+  function getMousePos(evt) {
+    var rect = canvas.getBoundingClientRect();
+    return {
+      x: evt.clientX - rect.left,
+      y: evt.clientY - rect.top
+    };
+  }
+
+  canvas.addEventListener("click", function(e) {
+    var pos = getMousePos(e);
+    drawPoint(pos);
+    doSend(JSON.stringify(pos));
+  }, false);
+
+  function init() {
+      document.myform.url.value = "ws://localhost:8000/"
+      document.myform.inputtext.value = "Hello World!"
+      document.myform.disconnectButton.disabled = true;
+  }
+
+  function doConnect() {
+      websocket = new WebSocket(document.myform.url.value);
+      websocket.onopen = function(evt) {
+          onOpen(evt)
+      };
+      websocket.onclose = function(evt) {
+          onClose(evt)
+      };
+      websocket.onmessage = function(evt) {
+          onMessage(evt)
+      };
+      websocket.onerror = function(evt) {
+          onError(evt)
+      };
+  }
+
+  function onOpen(evt) {
+      writeToScreen("connected\n");
+      document.myform.connectButton.disabled = true;
+      document.myform.disconnectButton.disabled = false;
+  }
+
+  function onClose(evt) {
+      writeToScreen("disconnected\n");
+      document.myform.connectButton.disabled = false;
+      document.myform.disconnectButton.disabled = true;
+  }
+
+  function onMessage(evt) {
+    var pos = JSON.parse(evt.data);
+
+    drawPoint(pos);
+  }
+
+  function drawPoint(pos) {
+    var radius = 10;
+
+    context.beginPath();
+    context.arc(pos.x, pos.y, radius, 0, 2 * Math.PI, false);
+    context.fillStyle = 'green';
+    context.fill();
+    context.lineWidth = 5;
+    context.strokeStyle = '#003300';
+    context.stroke();
+  }
+
+  function onError(evt) {
+      writeToScreen('error: ' + evt.data + '\n');
+
+      websocket.close();
+
+      document.myform.connectButton.disabled = false;
+      document.myform.disconnectButton.disabled = true;
+
+  }
+
+  function doSend(message) {
+      websocket.send(message);
+  }
+
+  function writeToScreen(message) {
+  }
+
+  window.addEventListener("load", init, false);
+
+
+  function sendText() {
+  }
+
+  function clearText() {
+  }
+
+  function doDisconnect() {
+      websocket.close();
+  }
+</script>
+</body>
+</html>

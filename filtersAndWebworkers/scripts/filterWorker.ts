@@ -1,4 +1,4 @@
-/// <reference path="typings/lib.webworker.d.ts" />
+/// <reference path="../typings/lib.webworker.d.ts" />
 /// <reference path="FilterWorkerMessage.ts" />
 
 
