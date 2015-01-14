@@ -16,6 +16,15 @@
     },
     "form-data/form-data.d.ts": {
       "commit": "8c53f63533b852de581c2e28aed28061cffcbe85"
+    },
+    "bluebird/bluebird.d.ts": {
+      "commit": "2cc4331067a81e2ae6bc4590e7b33bf286c8f28f"
+    },
+    "angularjs/angular.d.ts": {
+      "commit": "2cc4331067a81e2ae6bc4590e7b33bf286c8f28f"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "2cc4331067a81e2ae6bc4590e7b33bf286c8f28f"
     }
   }
 }

@@ -3,8 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <style>
+  th, td {
+    border: 1px solid black; text-align: center;
+  }
+  input {
+    text-align: center;
+  }
+  </style>
 </head>
 <body>
+  <div ng-app="app" ng-controller="ProductsController">
+    <p>
+      <label>kurs dolara: <input type="text" ng-model="dollarCurrency.Rate" /></label>
+    </p>
+    <p>
+      <label>kurs euro: <input type="text" ng-model="euroCurrency.Rate" /></label>
+    </p>
+    <p>
+      <label>kurs funta: <input type="text" ng-model="poundCurrency.Rate" /></label>
+    </p>
+    <p>
+      <table>
+        <thead>
+          <th>cena</th>
+          <th>waluta</th>
+          <th>ilość</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="product in products">
+            <td>
+              <input type="text" ng-model="product.Price" />
+            </td>
+            <td>
+              <select ng-model="product.Currency" ng-options="o as o.label for o in currencies"></select>
+            </td>
+            <td>
+              <input type="number" ng-model="product.Quantity" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" ng-model="newProduct.Price" />
+            </td>
+            <td>
+              <select ng-model="newProduct.Currency" ng-options="o as o.label for o in currencies"></select>
+            </td>
+            <td>
+              <input type="number" ng-model="newProduct.Quantity" />
+            </td>
+            <td>
+              <button ng-click="addProduct()">dodaj produkt</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </p>
+    <p>
+      suma: <span ng-bind="sum"></span> zł
+    </p>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>

@@ -5,14 +5,18 @@ import fs = require("fs");
 import url = require("url");
 import mime = require("mime");
 import request = require("request");
+var iconv = require("iconv-lite");
+
+iconv.extendNodeEncodings();
 
 http.createServer((req, res) => {
   var parsedUrl = url.parse(req.url);
   if(parsedUrl.pathname == "/getCurrencies") {
-    request.get('http://www.nbp.pl/kursy/xml/a003z150107.xml'
+    request.get({ url: "http://www.nbp.pl/kursy/xml/a003z150107.xml", encoding: "ISO-8859-2" }
       , function (error, response, body) {
         if (!error && res.statusCode == 200) {
-          res.write(body);
+          res.setHeader("Content-Type", "text/xml");
+          res.write(body, "ISO-8859-2");
           res.end();
         }
     });
